@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FFCalender.xcscheme</key>
+		<key>FFCalendar.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55AFEC3818AC435C005D2B91</key>
+		<key>CDAC31F81AD6F884005C1494</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55AFEC5818AC435D005D2B91</key>
+		<key>CDAC320D1AD6F884005C1494</key>
 		<dict>
 			<key>primary</key>
 			<true/>

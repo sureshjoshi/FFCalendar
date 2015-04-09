@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>03533952-33F6-4778-9570-1D8391D81B74</string>
+	<string>0FE63EA8-878D-429E-9767-A575DF801C4F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>FFCalendar</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/fggeraissate/FFCalendar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FFCalendar.xcodeproj/project.xcworkspace</string>
+	<string>FFCalendar.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F58B54FA332E4AE1758AFDC26AC03FD0D013374F</key>
