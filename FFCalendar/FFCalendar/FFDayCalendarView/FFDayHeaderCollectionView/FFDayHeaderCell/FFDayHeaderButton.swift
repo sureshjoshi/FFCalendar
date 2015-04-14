@@ -64,7 +64,7 @@ class FFDayHeaderButton: UIButton {
                         self.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                     }
                     
-                    self.setBackgroundImage(FFDayHeaderButton.imageCircleRed, forState: UIControlState.Normal)
+                    self.setBackgroundImage(nil, forState: UIControlState.Normal)
                 }
             }
         }
