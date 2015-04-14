@@ -31,7 +31,7 @@ class FFHourAndMinLabel: UILabel {
     
     func showText() {
         
-        let comp = NSDate.componentsOfDate(dateHourAndMin)
+        let comp = dateHourAndMin.components()
         self.text = String(format: "%02ld:%02ld", comp.hour, comp.minute)
     }
 }

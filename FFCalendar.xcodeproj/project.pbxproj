@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD7F72841ADC0F4B00CCA1CC /* FFEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72811ADC0F4B00CCA1CC /* FFEvent.swift */; };
+		CD7F72851ADC0F4B00CCA1CC /* FFExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72821ADC0F4B00CCA1CC /* FFExtensions.swift */; };
+		CD7F72861ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */; };
+		CD7F72881ADC0F7D00CCA1CC /* FFBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */; };
+		CD7F728A1ADC0FBC00CCA1CC /* FFDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */; };
+		CD83716B1ADD99C10003E1CF /* blackCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8371691ADD99C10003E1CF /* blackCircle.png */; };
+		CD83716C1ADD99C10003E1CF /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD83716A1ADD99C10003E1CF /* redCircle.png */; };
+		CD83716E1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83716D1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift */; };
+		CD8371761ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */; };
 		CDAC31FF1AD6F884005C1494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */; };
 		CDAC32061AD6F884005C1494 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAC32051AD6F884005C1494 /* Images.xcassets */; };
 		CDAC32091AD6F884005C1494 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAC32071AD6F884005C1494 /* LaunchScreen.xib */; };
@@ -14,10 +23,6 @@
 		CDAC32231AD6FC92005C1494 /* FFCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC32221AD6FC92005C1494 /* FFCalendarViewController.swift */; };
 		CDAC32271AD70356005C1494 /* FFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC32261AD70356005C1494 /* FFConstants.swift */; };
 		CDAC324D1AD70878005C1494 /* FFDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC324C1AD70878005C1494 /* FFDayCell.swift */; };
-		CDAC32501AD709B7005C1494 /* FFEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC324F1AD709B7005C1494 /* FFEvent.swift */; };
-		CDAC32531AD70C9C005C1494 /* FFHourAndMinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC32521AD70C9C005C1494 /* FFHourAndMinLabel.swift */; };
-		CDAC32571AD71172005C1494 /* FFExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC32561AD71172005C1494 /* FFExtensions.swift */; };
-		CDAC325A1AD717B4005C1494 /* FFBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC32591AD717B4005C1494 /* FFBlueButton.swift */; };
 		CDCB229F1AD8653500A81CE4 /* FFDayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB229E1AD8653500A81CE4 /* FFDayScrollView.swift */; };
 		CDCB22A11AD8656500A81CE4 /* FFDayCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB22A01AD8656500A81CE4 /* FFDayCollectionView.swift */; };
 		CDCB22A31AD8658F00A81CE4 /* FFDayCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB22A21AD8658F00A81CE4 /* FFDayCollectionViewFlowLayout.swift */; };
@@ -40,6 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD7F72811ADC0F4B00CCA1CC /* FFEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFEvent.swift; sourceTree = "<group>"; };
+		CD7F72821ADC0F4B00CCA1CC /* FFExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFExtensions.swift; sourceTree = "<group>"; };
+		CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHourAndMinLabel.swift; sourceTree = "<group>"; };
+		CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBlueButton.swift; sourceTree = "<group>"; };
+		CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDateManager.swift; sourceTree = "<group>"; };
+		CD8371691ADD99C10003E1CF /* blackCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackCircle.png; sourceTree = "<group>"; };
+		CD83716A1ADD99C10003E1CF /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
+		CD83716D1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayHeaderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		CD83716F1ADDB16D0003E1CF /* FFCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
+		CD8371741ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewAppearance_Swift.h"; sourceTree = "<group>"; };
+		CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewAppearance_Swift.m"; sourceTree = "<group>"; };
 		CDAC31F91AD6F884005C1494 /* FFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAC31FD1AD6F884005C1494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +67,6 @@
 		CDAC32221AD6FC92005C1494 /* FFCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FFCalendarViewController.swift; path = FFCalendarViewController/FFCalendarViewController.swift; sourceTree = "<group>"; };
 		CDAC32261AD70356005C1494 /* FFConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFConstants.swift; sourceTree = "<group>"; };
 		CDAC324C1AD70878005C1494 /* FFDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayCell.swift; sourceTree = "<group>"; };
-		CDAC324F1AD709B7005C1494 /* FFEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFEvent.swift; sourceTree = "<group>"; };
-		CDAC32521AD70C9C005C1494 /* FFHourAndMinLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHourAndMinLabel.swift; sourceTree = "<group>"; };
-		CDAC32561AD71172005C1494 /* FFExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFExtensions.swift; sourceTree = "<group>"; };
-		CDAC32591AD717B4005C1494 /* FFBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBlueButton.swift; sourceTree = "<group>"; };
 		CDCB229E1AD8653500A81CE4 /* FFDayScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayScrollView.swift; sourceTree = "<group>"; };
 		CDCB22A01AD8656500A81CE4 /* FFDayCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayCollectionView.swift; sourceTree = "<group>"; };
 		CDCB22A21AD8658F00A81CE4 /* FFDayCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -84,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD8371681ADD99C10003E1CF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CD8371691ADD99C10003E1CF /* blackCircle.png */,
+				CD83716A1ADD99C10003E1CF /* redCircle.png */,
+			);
+			name = Images;
+			path = FFCalendar/Images;
+			sourceTree = "<group>";
+		};
+		CD8371731ADDB1AF0003E1CF /* UIView+UIViewAppearance_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				CD8371741ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.h */,
+				CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */,
+			);
+			path = "UIView+UIViewAppearance_Swift";
+			sourceTree = "<group>";
+		};
 		CDAC31F01AD6F884005C1494 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +139,7 @@
 				CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */,
 				CDAC32211AD6FC7B005C1494 /* FFCalendarViewController */,
 				CDAC32241AD700B9005C1494 /* FFCalendar */,
+				CD8371681ADD99C10003E1CF /* Images */,
 				CDAC32051AD6F884005C1494 /* Images.xcassets */,
 				CDAC32071AD6F884005C1494 /* LaunchScreen.xib */,
 				CDAC31FC1AD6F884005C1494 /* Supporting Files */,
@@ -161,11 +193,14 @@
 			isa = PBXGroup;
 			children = (
 				CDAC32261AD70356005C1494 /* FFConstants.swift */,
-				CDAC324E1AD709A2005C1494 /* FFEvent */,
-				CDAC32511AD70C7C005C1494 /* FFHourAndMinLabel */,
-				CDAC32581AD71793005C1494 /* FFBlueButton */,
+				CD7F72811ADC0F4B00CCA1CC /* FFEvent.swift */,
+				CD7F72821ADC0F4B00CCA1CC /* FFExtensions.swift */,
+				CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */,
+				CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */,
+				CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */,
 				CDCB22A41AD866A400A81CE4 /* FFEventDetail and FFEditEvent Views and Popovers */,
-				CDAC32551AD710CF005C1494 /* FFExtension */,
+				CD83716F1ADDB16D0003E1CF /* FFCalendar-Bridging-Header.h */,
+				CD8371731ADDB1AF0003E1CF /* UIView+UIViewAppearance_Swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -184,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				CDF301F91AD850B400503C11 /* FFDayHeaderCollectionView.swift */,
+				CD83716D1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift */,
 				CDAC32481AD70846005C1494 /* FFDayHeaderCell */,
 			);
 			path = FFDayHeaderCollectionView;
@@ -223,38 +259,6 @@
 				CDAC324C1AD70878005C1494 /* FFDayCell.swift */,
 			);
 			path = FFDayCell;
-			sourceTree = "<group>";
-		};
-		CDAC324E1AD709A2005C1494 /* FFEvent */ = {
-			isa = PBXGroup;
-			children = (
-				CDAC324F1AD709B7005C1494 /* FFEvent.swift */,
-			);
-			path = FFEvent;
-			sourceTree = "<group>";
-		};
-		CDAC32511AD70C7C005C1494 /* FFHourAndMinLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CDAC32521AD70C9C005C1494 /* FFHourAndMinLabel.swift */,
-			);
-			path = FFHourAndMinLabel;
-			sourceTree = "<group>";
-		};
-		CDAC32551AD710CF005C1494 /* FFExtension */ = {
-			isa = PBXGroup;
-			children = (
-				CDAC32561AD71172005C1494 /* FFExtensions.swift */,
-			);
-			path = FFExtension;
-			sourceTree = "<group>";
-		};
-		CDAC32581AD71793005C1494 /* FFBlueButton */ = {
-			isa = PBXGroup;
-			children = (
-				CDAC32591AD717B4005C1494 /* FFBlueButton.swift */,
-			);
-			path = FFBlueButton;
 			sourceTree = "<group>";
 		};
 		CDCB22A41AD866A400A81CE4 /* FFEventDetail and FFEditEvent Views and Popovers */ = {
@@ -363,6 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAC32091AD6F884005C1494 /* LaunchScreen.xib in Resources */,
+				CD83716C1ADD99C10003E1CF /* redCircle.png in Resources */,
+				CD83716B1ADD99C10003E1CF /* blackCircle.png in Resources */,
 				CDAC32061AD6F884005C1494 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,23 +387,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDAC32501AD709B7005C1494 /* FFEvent.swift in Sources */,
 				CDCB22A31AD8658F00A81CE4 /* FFDayCollectionViewFlowLayout.swift in Sources */,
-				CDAC32531AD70C9C005C1494 /* FFHourAndMinLabel.swift in Sources */,
 				CDAC324D1AD70878005C1494 /* FFDayCell.swift in Sources */,
+				CD7F72841ADC0F4B00CCA1CC /* FFEvent.swift in Sources */,
+				CD8371761ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m in Sources */,
 				CDF301F81AD84AD800503C11 /* FFDayCalendarView.swift in Sources */,
 				CDCB229F1AD8653500A81CE4 /* FFDayScrollView.swift in Sources */,
 				CDAC32231AD6FC92005C1494 /* FFCalendarViewController.swift in Sources */,
 				CDF301FE1AD850F400503C11 /* FFDayHeaderButton.swift in Sources */,
+				CD7F728A1ADC0FBC00CCA1CC /* FFDateManager.swift in Sources */,
 				CDAC31FF1AD6F884005C1494 /* AppDelegate.swift in Sources */,
-				CDAC325A1AD717B4005C1494 /* FFBlueButton.swift in Sources */,
-				CDAC32571AD71172005C1494 /* FFExtensions.swift in Sources */,
+				CD83716E1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift in Sources */,
+				CD7F72851ADC0F4B00CCA1CC /* FFExtensions.swift in Sources */,
 				CDF301FC1AD850D400503C11 /* FFDayHeaderCell.swift in Sources */,
 				CDF301FA1AD850B400503C11 /* FFDayHeaderCollectionView.swift in Sources */,
 				CDAC32271AD70356005C1494 /* FFConstants.swift in Sources */,
 				CDCB22A81AD8670200A81CE4 /* FFEventDetailView.swift in Sources */,
 				CDCB22AA1AD8672500A81CE4 /* FFEditEventView.swift in Sources */,
+				CD7F72881ADC0F7D00CCA1CC /* FFBlueButton.swift in Sources */,
 				CDCB22A11AD8656500A81CE4 /* FFDayCollectionView.swift in Sources */,
+				CD7F72861ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,9 +523,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FFCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FFCalendar/FFCalendar/Util/FFCalendar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -524,9 +536,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FFCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FFCalendar/FFCalendar/Util/FFCalendar-Bridging-Header.h";
 			};
 			name = Release;
 		};

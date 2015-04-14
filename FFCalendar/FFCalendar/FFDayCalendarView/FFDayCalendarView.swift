@@ -19,7 +19,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     
-    var delegate: FFDayCalendarViewDelegate?
+    var protocolCustom: FFDayCalendarViewDelegate?
     var dictEvents: Dictionary<NSDate, Array<FFEvent>>?
     
     private var collectionViewHeaderDay: FFDayHeaderCollectionView!
@@ -51,26 +51,32 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - 
+    // MARK: - Invalidate Layout
     
     func invalidateLayout() {
         
+        collectionViewHeaderDay.collectionViewLayout.invalidateLayout()
         
+    }
+    
+    // MARK: - FFDateManager Notification
+    
+    func dateChanged(not: NSNotification) {
+    
     }
     
     // MARK: - Add Subviews
     
     private func addSubviews() {
 
-        collectionViewHeaderDay = FFDayHeaderCollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionViewHeaderDay = FFDayHeaderCollectionView(frame: CGRectZero, collectionViewLayout: FFDayHeaderCollectionViewFlowLayout())
         collectionViewHeaderDay.setTranslatesAutoresizingMaskIntoConstraints(false)
-        collectionViewHeaderDay.backgroundColor = UIColor.redColor()
         self.addSubview(collectionViewHeaderDay)
         
         let k_HEADER = "header"
         let k_HEADER_HEIGHT = "headerHeight"
         var dictViews:[String: UIView] = [k_HEADER: collectionViewHeaderDay]
-        var dictMetrics:[String: Int] = [k_HEADER_HEIGHT: k_HEADER_HEIGHT_SCROLL]
+        var dictMetrics:[String: Int] = [k_HEADER_HEIGHT: isIphone ? k_HEADER_HEIGHT_SCROLL/2 : k_HEADER_HEIGHT_SCROLL]
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]-0-|", k_HEADER), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"V:|-0-[%@(%@)]", k_HEADER, k_HEADER_HEIGHT), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
@@ -87,7 +93,5 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]", k_CONTAINER), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 0.5, constant: 0))
-        
     }
-    
 }

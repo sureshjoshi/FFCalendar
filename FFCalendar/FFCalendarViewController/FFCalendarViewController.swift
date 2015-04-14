@@ -10,11 +10,13 @@ import UIKit
 
 class FFCalendarViewController: UIViewController {
     
+    var calendarDayView: FFDayCalendarView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let calendarDayView = FFDayCalendarView()
+        calendarDayView = FFDayCalendarView()
         calendarDayView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(calendarDayView)
         
@@ -26,4 +28,12 @@ class FFCalendarViewController: UIViewController {
         
         self.view.layoutIfNeeded()
     }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        calendarDayView.invalidateLayout()
+    }
+
 }
