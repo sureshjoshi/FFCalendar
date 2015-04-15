@@ -18,6 +18,7 @@ class FFDayHeaderCell: UICollectionViewCell {
     // MARK: - Properties
     
     private var button: FFDayHeaderButton!
+    private var constraintButtonWidth: NSLayoutConstraint!
     
     var protocolCustom: FFDayHeaderCellDelegate?
     
@@ -40,12 +41,27 @@ class FFDayHeaderCell: UICollectionViewCell {
         
         super.init(frame: frame)
         
+        self.backgroundColor = UIColor.customGrayLighter()
+        
         addSubviews()
     }
 
     required init(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        let padding: CGFloat = 2
+        constraintButtonWidth.constant = min(self.frame.size.width-2*padding, self.frame.size.height-2*padding)
+        
+        self.updateConstraints()
+        self.layoutIfNeeded()
+        
+        button.transformToCircle()
     }
     
     // MARK: - Action
@@ -68,11 +84,12 @@ class FFDayHeaderCell: UICollectionViewCell {
         button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
         self.contentView.addSubview(button)
         
-        let k_BUTTON = "button"
-        let dictViews = [k_BUTTON: button]
+        self.contentView.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.contentView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        self.contentView.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.contentView.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: button, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
         
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]-0-|", k_BUTTON), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
-        self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"V:|-0-[%@]-0-|", k_BUTTON), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
+        constraintButtonWidth = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+        self.contentView.addConstraint(constraintButtonWidth)
         
         self.contentView.layoutIfNeeded()
     }

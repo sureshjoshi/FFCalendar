@@ -91,23 +91,23 @@ extension UIColor {
 
 // MARK: -
 
-//extension UIView {
-//    
-//    func transformToCircle() {
-//        
-//        let saveCenter = self.center
-//        
-//        let width = (self.frame.size.width<self.frame.size.height) ? self.frame.size.width : self.frame.size.height;
-//        var newFrame = self.frame
-//        newFrame.size.width = width
-//        newFrame.size.height = width
-//        
-//        self.frame = newFrame
-//        self.layer.cornerRadius = width/2
-//        self.center = saveCenter
-//        self.clipsToBounds = true
-//    }
-//    
+extension UIView {
+    
+    func transformToCircle() {
+        
+        let saveCenter = self.center
+        
+        let width = (self.frame.size.width<self.frame.size.height) ? self.frame.size.width : self.frame.size.height;
+        var newFrame = self.frame
+        newFrame.size.width = width
+        newFrame.size.height = width
+        
+        self.frame = newFrame
+        self.layer.cornerRadius = width/2
+        self.center = saveCenter
+        self.clipsToBounds = true
+    }
+    
 //    func mergeSubviews() -> UIImage {
 //        
 //        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
@@ -118,7 +118,7 @@ extension UIColor {
 //        
 //        return image;
 //    }
-//}
+}
 
 //extension UILabel {
 //    

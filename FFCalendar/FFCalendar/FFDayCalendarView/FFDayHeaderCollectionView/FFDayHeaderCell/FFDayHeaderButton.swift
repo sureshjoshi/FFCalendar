@@ -15,8 +15,6 @@ class FFDayHeaderButton: UIButton {
     // MARK: - Properties
     
     var date: NSDate?
-    static let imageCircleBlack = UIImage(named: k_IMAGE_CIRCLE_BLACK)
-    static let imageCircleRed = UIImage(named: k_IMAGE_CIRCLE_RED)
     
     // MARK: - Lifecycle
     
@@ -24,12 +22,10 @@ class FFDayHeaderButton: UIButton {
         
         super.init(frame: frame)
         
-        UIImageView.my_appearanceWhenContainedIn(FFDayHeaderButton.classForCoder()).contentMode = UIViewContentMode.ScaleAspectFit
-        
-        self.backgroundColor = UIColor.customGrayLighter()
+        self.backgroundColor = UIColor.clearColor()
         self.contentMode = UIViewContentMode.ScaleAspectFit
         
-        let fontSize: CGFloat = isIphone ? 10 : 20
+        let fontSize: CGFloat = isIphone ? 7 : 20
         self.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
     }
 
@@ -51,9 +47,9 @@ class FFDayHeaderButton: UIButton {
                     self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                     
                     if NSDate.isTheSameDateTheCompA(comp, andCompB: NSDate.componentsOfCurrentDate()) {
-                        self.setBackgroundImage(FFDayHeaderButton.imageCircleRed, forState: UIControlState.Normal)
+                        self.backgroundColor = UIColor.redColor()
                     } else {
-                        self.setBackgroundImage(FFDayHeaderButton.imageCircleBlack, forState: UIControlState.Normal)
+                        self.backgroundColor = UIColor.blackColor()
                     }
                     
                 } else {
@@ -64,7 +60,7 @@ class FFDayHeaderButton: UIButton {
                         self.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                     }
                     
-                    self.setBackgroundImage(nil, forState: UIControlState.Normal)
+                    self.backgroundColor = UIColor.clearColor()
                 }
             }
         }

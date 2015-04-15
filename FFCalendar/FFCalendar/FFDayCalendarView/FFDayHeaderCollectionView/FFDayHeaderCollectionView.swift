@@ -120,7 +120,7 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: (self.frame.size.width-CGFloat(k_SPACE_COLLECTIONVIEW_CELL*k_QNT_BY_PAGING))/CGFloat(k_QNT_BY_PAGING), height: self.frame.size.height)
+        return CGSize(width: (self.frame.size.width-CGFloat(k_SPACE_COLLECTIONVIEW_CELL*(k_QNT_BY_PAGING-1)))/CGFloat(k_QNT_BY_PAGING), height: self.frame.size.height)
     }
     
     // MARK: - UIScrollView Delegate

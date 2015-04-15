@@ -74,12 +74,11 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         self.addSubview(collectionViewHeaderDay)
         
         let k_HEADER = "header"
-        let k_HEADER_HEIGHT = "headerHeight"
         var dictViews:[String: UIView] = [k_HEADER: collectionViewHeaderDay]
-        var dictMetrics:[String: Int] = [k_HEADER_HEIGHT: isIphone ? k_HEADER_HEIGHT_SCROLL/2 : k_HEADER_HEIGHT_SCROLL]
         
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]-0-|", k_HEADER), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"V:|-0-[%@(%@)]", k_HEADER, k_HEADER_HEIGHT), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]-0-|", k_HEADER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"V:|-0-[%@]", k_HEADER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
+        self.addConstraint(NSLayoutConstraint(item: collectionViewHeaderDay, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0.1, constant: 0))
         
         dayContainerScroll = FFDayScrollView(frame: CGRectZero)
         dayContainerScroll.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -91,7 +90,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Top, relatedBy: .Equal, toItem: collectionViewHeaderDay, attribute: .Bottom, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]", k_CONTAINER), options: NSLayoutFormatOptions(0), metrics: dictMetrics, views: dictViews))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]", k_CONTAINER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 0.5, constant: 0))
     }
 }

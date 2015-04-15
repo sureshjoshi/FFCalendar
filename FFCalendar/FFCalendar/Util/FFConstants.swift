@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Fernanda G Geraissate. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum ScrollDirection {
     case None
@@ -32,8 +32,5 @@ let k_HEADER_HEIGHT_SCROLL = 100
 let k_CELL = "cell"
 
 let k_QNT_BY_PAGING = 7
-
-let k_IMAGE_CIRCLE_BLACK = "blackCircle"
-let k_IMAGE_CIRCLE_RED = "redCircle"
 
 let isIphone = (UIDevice.currentDevice().userInterfaceIdiom == .Phone)

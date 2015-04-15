@@ -12,10 +12,7 @@
 		CD7F72861ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */; };
 		CD7F72881ADC0F7D00CCA1CC /* FFBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */; };
 		CD7F728A1ADC0FBC00CCA1CC /* FFDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */; };
-		CD83716B1ADD99C10003E1CF /* blackCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD8371691ADD99C10003E1CF /* blackCircle.png */; };
-		CD83716C1ADD99C10003E1CF /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CD83716A1ADD99C10003E1CF /* redCircle.png */; };
 		CD83716E1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83716D1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift */; };
-		CD8371761ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */; };
 		CDAC31FF1AD6F884005C1494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */; };
 		CDAC32061AD6F884005C1494 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAC32051AD6F884005C1494 /* Images.xcassets */; };
 		CDAC32091AD6F884005C1494 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAC32071AD6F884005C1494 /* LaunchScreen.xib */; };
@@ -50,12 +47,8 @@
 		CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHourAndMinLabel.swift; sourceTree = "<group>"; };
 		CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFBlueButton.swift; sourceTree = "<group>"; };
 		CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDateManager.swift; sourceTree = "<group>"; };
-		CD8371691ADD99C10003E1CF /* blackCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackCircle.png; sourceTree = "<group>"; };
-		CD83716A1ADD99C10003E1CF /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
 		CD83716D1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayHeaderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		CD83716F1ADDB16D0003E1CF /* FFCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
-		CD8371741ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewAppearance_Swift.h"; sourceTree = "<group>"; };
-		CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewAppearance_Swift.m"; sourceTree = "<group>"; };
 		CDAC31F91AD6F884005C1494 /* FFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDAC31FD1AD6F884005C1494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,25 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD8371681ADD99C10003E1CF /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				CD8371691ADD99C10003E1CF /* blackCircle.png */,
-				CD83716A1ADD99C10003E1CF /* redCircle.png */,
-			);
-			name = Images;
-			path = FFCalendar/Images;
-			sourceTree = "<group>";
-		};
-		CD8371731ADDB1AF0003E1CF /* UIView+UIViewAppearance_Swift */ = {
-			isa = PBXGroup;
-			children = (
-				CD8371741ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.h */,
-				CD8371751ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m */,
-			);
-			path = "UIView+UIViewAppearance_Swift";
-			sourceTree = "<group>";
-		};
 		CDAC31F01AD6F884005C1494 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +113,6 @@
 				CDAC31FE1AD6F884005C1494 /* AppDelegate.swift */,
 				CDAC32211AD6FC7B005C1494 /* FFCalendarViewController */,
 				CDAC32241AD700B9005C1494 /* FFCalendar */,
-				CD8371681ADD99C10003E1CF /* Images */,
 				CDAC32051AD6F884005C1494 /* Images.xcassets */,
 				CDAC32071AD6F884005C1494 /* LaunchScreen.xib */,
 				CDAC31FC1AD6F884005C1494 /* Supporting Files */,
@@ -200,7 +173,6 @@
 				CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */,
 				CDCB22A41AD866A400A81CE4 /* FFEventDetail and FFEditEvent Views and Popovers */,
 				CD83716F1ADDB16D0003E1CF /* FFCalendar-Bridging-Header.h */,
-				CD8371731ADDB1AF0003E1CF /* UIView+UIViewAppearance_Swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -367,8 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAC32091AD6F884005C1494 /* LaunchScreen.xib in Resources */,
-				CD83716C1ADD99C10003E1CF /* redCircle.png in Resources */,
-				CD83716B1ADD99C10003E1CF /* blackCircle.png in Resources */,
 				CDAC32061AD6F884005C1494 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +360,6 @@
 				CDCB22A31AD8658F00A81CE4 /* FFDayCollectionViewFlowLayout.swift in Sources */,
 				CDAC324D1AD70878005C1494 /* FFDayCell.swift in Sources */,
 				CD7F72841ADC0F4B00CCA1CC /* FFEvent.swift in Sources */,
-				CD8371761ADDB1D10003E1CF /* UIView+UIViewAppearance_Swift.m in Sources */,
 				CDF301F81AD84AD800503C11 /* FFDayCalendarView.swift in Sources */,
 				CDCB229F1AD8653500A81CE4 /* FFDayScrollView.swift in Sources */,
 				CDAC32231AD6FC92005C1494 /* FFCalendarViewController.swift in Sources */,
