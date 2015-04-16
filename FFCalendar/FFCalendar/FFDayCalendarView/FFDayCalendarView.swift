@@ -65,6 +65,12 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
     
     }
     
+    // MARK: - Tap Gesture
+    
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        
+    }
+    
     // MARK: - Add Subviews
     
     private func addSubviews() {
@@ -74,7 +80,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         self.addSubview(collectionViewHeaderDay)
         
         let k_HEADER = "header"
-        var dictViews:[String: UIView] = [k_HEADER: collectionViewHeaderDay]
+        var dictViews: [String: UIView] = [k_HEADER: collectionViewHeaderDay]
         
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]-0-|", k_HEADER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"V:|-0-[%@]", k_HEADER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
@@ -82,7 +88,6 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         
         dayContainerScroll = FFDayScrollView(frame: CGRectZero)
         dayContainerScroll.setTranslatesAutoresizingMaskIntoConstraints(false)
-        dayContainerScroll.backgroundColor = UIColor.orangeColor()
         self.addSubview(dayContainerScroll)
 
         let k_CONTAINER = "container"
@@ -92,5 +97,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0))
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format:"H:|-0-[%@]", k_CONTAINER), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 0.5, constant: 0))
+        
+        self.layoutIfNeeded()
     }
 }

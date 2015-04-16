@@ -34,7 +34,7 @@ class FFDayHeaderButton: UIButton {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - Set Public Property
+    // MARK: - Override Property
     
     override var selected: Bool {
         

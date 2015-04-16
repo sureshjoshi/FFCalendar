@@ -120,18 +120,18 @@ extension UIView {
 //    }
 }
 
-//extension UILabel {
-//    
-//    func widthThatWouldFit() -> CGFloat {
-//    
-//        self.numberOfLines = 0;
-//        var rectText = CGRectZero
-//        
-//        if let lns_str:NSString = self.text as NSString? {
-//            
-//            rectText = lns_str.boundingRectWithSize(CGSize(width: CGFloat.max, height: self.frame.size.height), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self], context: nil)
-//        }
-//        
-//        return rectText.size.width;
-//    }
-//}
+extension UILabel {
+    
+    func widthThatWouldFit() -> CGFloat {
+    
+        self.numberOfLines = 0;
+        var rectText = CGRectZero
+        
+        if let lns_str:NSString = self.text as NSString? {
+            
+            rectText = lns_str.boundingRectWithSize(CGSize(width: CGFloat.max, height: self.frame.size.height), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: self.font], context: nil)
+        }
+        
+        return rectText.size.width;
+    }
+}

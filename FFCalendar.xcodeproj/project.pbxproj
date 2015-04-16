@@ -29,6 +29,7 @@
 		CDF301FA1AD850B400503C11 /* FFDayHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF301F91AD850B400503C11 /* FFDayHeaderCollectionView.swift */; };
 		CDF301FC1AD850D400503C11 /* FFDayHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF301FB1AD850D400503C11 /* FFDayHeaderCell.swift */; };
 		CDF301FE1AD850F400503C11 /* FFDayHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF301FD1AD850F400503C11 /* FFDayHeaderButton.swift */; };
+		CDFF719B1ADF08CF003D07AD /* FFHourAndMinLabelWithLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF719A1ADF08CF003D07AD /* FFHourAndMinLabelWithLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		CDF301F91AD850B400503C11 /* FFDayHeaderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayHeaderCollectionView.swift; sourceTree = "<group>"; };
 		CDF301FB1AD850D400503C11 /* FFDayHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayHeaderCell.swift; sourceTree = "<group>"; };
 		CDF301FD1AD850F400503C11 /* FFDayHeaderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFDayHeaderButton.swift; sourceTree = "<group>"; };
+		CDFF719A1ADF08CF003D07AD /* FFHourAndMinLabelWithLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFHourAndMinLabelWithLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				CD7F72821ADC0F4B00CCA1CC /* FFExtensions.swift */,
 				CD7F72891ADC0FBC00CCA1CC /* FFDateManager.swift */,
 				CD7F72831ADC0F4B00CCA1CC /* FFHourAndMinLabel.swift */,
+				CDFF719A1ADF08CF003D07AD /* FFHourAndMinLabelWithLine.swift */,
 				CD7F72871ADC0F7D00CCA1CC /* FFBlueButton.swift */,
 				CDCB22A41AD866A400A81CE4 /* FFEventDetail and FFEditEvent Views and Popovers */,
 				CD83716F1ADDB16D0003E1CF /* FFCalendar-Bridging-Header.h */,
@@ -364,6 +367,7 @@
 				CDCB229F1AD8653500A81CE4 /* FFDayScrollView.swift in Sources */,
 				CDAC32231AD6FC92005C1494 /* FFCalendarViewController.swift in Sources */,
 				CDF301FE1AD850F400503C11 /* FFDayHeaderButton.swift in Sources */,
+				CDFF719B1ADF08CF003D07AD /* FFHourAndMinLabelWithLine.swift in Sources */,
 				CD7F728A1ADC0FBC00CCA1CC /* FFDateManager.swift in Sources */,
 				CDAC31FF1AD6F884005C1494 /* AppDelegate.swift in Sources */,
 				CD83716E1ADDA2710003E1CF /* FFDayHeaderCollectionViewFlowLayout.swift in Sources */,

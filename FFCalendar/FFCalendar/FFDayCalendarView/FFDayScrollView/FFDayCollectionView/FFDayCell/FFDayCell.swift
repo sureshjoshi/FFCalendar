@@ -88,12 +88,12 @@ class FFDayCell: UICollectionViewCell {
                     
                     labelRed = labelWithCurrentHourWithWidth(labelHourMin.frame.size.width, _yCurrent: labelHourMin.frame.origin.y)
                     labelRed?.alpha = 0
-                    self.addSubview(labelRed!);
+                    self.addSubview(labelRed!)
                     
-                    labelWithSameYOfCurrentHour = labelHourMin;
+                    labelWithSameYOfCurrentHour = labelHourMin
                 }
 
-                y += k_HEIGHT_CELL_MIN;
+                y += k_HEIGHT_CELL_MIN
             }
         }
     }
@@ -132,7 +132,7 @@ class FFDayCell: UICollectionViewCell {
         if let arrayEventsUnw = arrayEvents {
             
             let arrayFrames = []
-            let dictButtonsWithSameFrame = [:];
+            let dictButtonsWithSameFrame = [:]
             
             for event in arrayEventsUnw {
                 
@@ -143,16 +143,16 @@ class FFDayCell: UICollectionViewCell {
                     
                     for label in arrayLabelsHourAndMinUnw {
                         
-                        let compLabel = NSDate.componentsOfDate(label.dateHourAndMin);
-                        let compEventBegin = NSDate.componentsOfDate(event.dateTimeBegin);
-                        let compEventEnd = NSDate.componentsOfDate(event.dateTimeEnd);
+                        let compLabel = label.dateHourAndMin.components()
+                        let compEventBegin = event.dateTimeBegin.components()
+                        let compEventEnd = event.dateTimeEnd.components()
                         
                         if compLabel.hour == compEventBegin.hour && compLabel.minute <= compEventBegin.minute && compEventBegin.minute < compLabel.minute+k_MINUTES_PER_LABEL {
                             yTimeBegin = label.frame.origin.y+label.frame.size.height/2
                         }
                         
                         if compLabel.hour == compEventEnd.hour && compLabel.minute <= compEventEnd.minute && compEventEnd.minute < compLabel.minute+k_MINUTES_PER_LABEL {
-                            yTimeEnd = label.frame.origin.y+label.frame.size.height;
+                            yTimeEnd = label.frame.origin.y+label.frame.size.height
                         }
                     }
                     
@@ -207,13 +207,13 @@ class FFDayCell: UICollectionViewCell {
                 
                 labelWithSameYOfCurrentHour?.alpha = 1
                 let compNow = NSDate.componentsOfCurrentDate()
-                let boolIsToday = NSDate.isTheSameDateTheCompA(compNow, andCompB: NSDate.componentsOfDate(dateUnw))
+                let boolIsToday = NSDate.isTheSameDateTheCompA(compNow, andCompB:dateUnw.components())
                 
                 if boolIsToday {
                     
                     for label in arrayLabelsHourAndMinUnw {
                         
-                        let compLabel = NSDate.componentsOfDate(label.dateHourAndMin)
+                        let compLabel = label.dateHourAndMin.components()
                         if compLabel.hour == compNow.hour && compLabel.minute <= compNow.minute && compNow.minute < compLabel.minute+k_MINUTES_PER_LABEL {
                             
                             if let frameUnw = labelRed?.frame {
@@ -225,8 +225,8 @@ class FFDayCell: UICollectionViewCell {
                                 labelRed?.dateHourAndMin = NSDate()
                                 labelRed?.showText
                                 
-                                labelWithSameYOfCurrentHour = label;
-                                break;
+                                labelWithSameYOfCurrentHour = label
+                                break
                             }
                         }
                     }

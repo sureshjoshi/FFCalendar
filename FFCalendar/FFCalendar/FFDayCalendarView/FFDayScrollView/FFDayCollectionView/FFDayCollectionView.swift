@@ -9,5 +9,6 @@
 import UIKit
 
 class FFDayCollectionView: UICollectionView {
-   
+    
+    var dictEvents: Dictionary<NSDate, Array<FFEvent>>?
 }
