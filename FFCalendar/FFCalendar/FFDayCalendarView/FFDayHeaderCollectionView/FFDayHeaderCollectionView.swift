@@ -10,7 +10,7 @@ import UIKit
 
 protocol FFDayHeaderCollectionViewProtocol {
     
-    func dateSelected(date: NSDate)
+    func collectionView(collectionView: UICollectionView, dateSelected date: NSDate)
 }
 
 class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, FFDayHeaderCellDelegate {
@@ -110,8 +110,8 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
             cell.date = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: 1+indexPath.row-(compFirstDayOfMonth.weekday-1)-7)
             
             if cell.selected, let dateCell = cell.date {
-                FFDateManager.sharedManager.dateCalendar = dateCell
-                protocolCustom?.dateSelected(dateCell)
+                
+                protocolCustom?.collectionView(self, dateSelected: dateCell)
             }
         }
         
@@ -167,8 +167,10 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
             scrollDirection = ScrollDirection.None
         }
         
-        FFDateManager.sharedManager.dateCalendar = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.day)
-        protocolCustom?.dateSelected(FFDateManager.sharedManager.dateCalendar)
+        if let date = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.day) {
+        
+            protocolCustom?.collectionView(self, dateSelected: date)
+        }
         
         boolGoPrevious = false
         boolGoNext = false
@@ -178,7 +180,7 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     func cell(cell: UICollectionViewCell, dateSelected date: NSDate) {
         
-        protocolCustom?.dateSelected(date)
+        protocolCustom?.collectionView(self, dateSelected: date)
         
         self.reloadData()
     }

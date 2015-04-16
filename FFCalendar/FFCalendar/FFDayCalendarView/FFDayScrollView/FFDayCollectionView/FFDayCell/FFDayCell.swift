@@ -13,14 +13,18 @@ protocol FFDayCellProtocol {
     func cell(cell: UICollectionViewCell, showViewDetailsWithEvent event: FFEvent?)
 }
 
-// MARK: -
-
 class FFDayCell: UICollectionViewCell {
     
     // MARK: - Properties
     
     var protocolCustom: FFDayCellProtocol?
-    var date: NSDate?
+    var date: NSDate? {
+        
+        didSet {
+            
+            self.reloadLabelRed()
+        }
+    }
     
     private var arrayLabelsHourAndMin: Array<FFHourAndMinLabel>? = []
     private var arrayButtonsEvents: Array<FFBlueButton>? = []
@@ -37,7 +41,7 @@ class FFDayCell: UICollectionViewCell {
         
         addLines()
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -55,32 +59,27 @@ class FFDayCell: UICollectionViewCell {
     
     private func addLines() {
         
-        var y = 0
+        var y:CGFloat = 0
         
         let compNow = NSDate.componentsOfCurrentDate()
         
-        for var hour = 0; hour <= 23; hour++ {
+        let heightOneHour = self.frame.size.height/CGFloat(24*60/k_MINUTES_PER_LABEL)
+        
+        for var hour = 0; hour < 24; hour++ {
             
-            for var min = 0; min <= 45; min += k_MINUTES_PER_LABEL {
+            for var min = 0; min < 60; min += k_MINUTES_PER_LABEL {
                 
-                //    FFHourAndMinLabel *labelHourMin = [[FFHourAndMinLabel alloc] initWithFrame:CGRectMake(0, y, self.frame.size.width, HEIGHT_CELL_MIN) date:[NSDate dateWithHour:hour min:min]];
-                let labelHourMin = FFHourAndMinLabel(date: NSDate.dateWithHour(hour, min: min))
-                labelHourMin.frame = CGRect(x: 0, y: CGFloat(y), width: self.frame.size.width, height: CGFloat(k_HEIGHT_CELL_MIN))
-                labelHourMin.textColor = UIColor.grayColor()
+                let labelHourMin = FFHourAndMinLabelWithLine(date: NSDate.dateWithHour(hour, min: min))
+                labelHourMin.frame = CGRect(x: 5, y: CGFloat(y), width: self.frame.size.width-10, height: CGFloat(heightOneHour))
+                labelHourMin.textColor = UIColor.clearColor()
                 
                 if min == 0 {
                     
-                    labelHourMin.showText()
-                    labelHourMin.sizeToFit()
-                    
-                    //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(labelHourMin.frame.origin.x+width+10, HEIGHT_CELL_MIN/2., self.frame.size.width-labelHourMin.frame.origin.x-width-20, 1.)];
-                    let viewLineGray = UIView()
-                    viewLineGray.frame = CGRect(x: labelHourMin.frame.origin.x+labelHourMin.frame.size.width+10, y: CGFloat(k_HEIGHT_CELL_MIN/2), width: self.frame.size.width-labelHourMin.frame.origin.x-labelHourMin.frame.size.width-20, height: CGFloat(1))
-                    viewLineGray.backgroundColor = UIColor.customGrayLight()
-                    labelHourMin.addSubview(viewLineGray)
+                    labelHourMin.textColor = UIColor.grayColor()
                 }
                 
                 self.addSubview(labelHourMin)
+                
                 arrayLabelsHourAndMin?.append(labelHourMin)
                 
                 let compLabel = NSDate.componentsWithHour(hour, min: min)
@@ -92,26 +91,19 @@ class FFDayCell: UICollectionViewCell {
                     
                     labelWithSameYOfCurrentHour = labelHourMin
                 }
-
-                y += k_HEIGHT_CELL_MIN
+                
+                y += heightOneHour
             }
         }
     }
     
     private func labelWithCurrentHourWithWidth(_width: CGFloat, _yCurrent: CGFloat) -> FFHourAndMinLabel {
         
-        //    let label = [[FFHourAndMinLabel alloc] initWithFrame:CGRectMake(.0, _yCurrent, _width, HEIGHT_CELL_MIN) date:[NSDate date]];
-        let label = FFHourAndMinLabel(date: NSDate())
-        label.frame = CGRect(x: 0, y: _yCurrent, width: _width, height: CGFloat(k_HEIGHT_CELL_MIN))
-        label.showText()
-        label.textColor = UIColor.redColor()
-        label.sizeToFit()
+        let heightOneHour = self.frame.size.height/CGFloat(24*60/k_MINUTES_PER_LABEL)
         
-        //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(label.frame.origin.x+width+10., HEIGHT_CELL_MIN/2., _width-label.frame.origin.x-width-20., 1.)];
-        let view = UIView()
-        view.frame = CGRect(x: label.frame.origin.x+label.frame.size.width+10, y: CGFloat(k_HEIGHT_CELL_MIN/2), width: _width-label.frame.origin.x-label.frame.size.width-20, height: 1)
-        view.backgroundColor = UIColor.redColor()
-        label.addSubview(view)
+        let label = FFHourAndMinLabelWithLine(date: NSDate())
+        label.frame = CGRect(x: 5, y: _yCurrent, width: _width-10, height: CGFloat(heightOneHour))
+        label.textColor = UIColor.redColor()
         
         return label
     }
@@ -121,27 +113,29 @@ class FFDayCell: UICollectionViewCell {
     private func addButtonsOfArray(arrayEvents: Array<FFEvent>?) {
         
         for subview in self.subviews {
-            if let subviewUnw = subview as? FFBlueButton  {
-                subviewUnw.removeFromSuperview()
+            
+            if let subview = subview as? FFBlueButton  {
+                
+                subview.removeFromSuperview()
             }
         }
         
         arrayButtonsEvents?.removeAll()
         reloadLabelRed()
         
-        if let arrayEventsUnw = arrayEvents {
+        if let arrayEvents = arrayEvents {
             
             let arrayFrames = []
             let dictButtonsWithSameFrame = [:]
             
-            for event in arrayEventsUnw {
+            for event in arrayEvents {
                 
                 var yTimeBegin: CGFloat = 0
                 var yTimeEnd: CGFloat = 0
                 
-                if let arrayLabelsHourAndMinUnw = arrayLabelsHourAndMin {
+                if let arrayLabelsHourAndMin = arrayLabelsHourAndMin {
                     
-                    for label in arrayLabelsHourAndMinUnw {
+                    for label in arrayLabelsHourAndMin {
                         
                         let compLabel = label.dateHourAndMin.components()
                         let compEventBegin = event.dateTimeBegin.components()
@@ -156,7 +150,6 @@ class FFDayCell: UICollectionViewCell {
                         }
                     }
                     
-                    //  FFBlueButton *_button = [[FFBlueButton alloc] initWithFrame:CGRectMake(70., yTimeBegin, self.frame.size.width-95., yTimeEnd-yTimeBegin)];
                     let _button = FFBlueButton()
                     _button.frame = CGRect(x: 70, y: yTimeBegin, width: self.frame.size.width-95, height: yTimeEnd-yTimeBegin)
                     _button.addTarget(self, action: Selector("buttonAction"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -165,9 +158,9 @@ class FFDayCell: UICollectionViewCell {
                     
                     arrayButtonsEvents?.append(_button)
                     self.addSubview(_button)
-
+                    
                     // Save Frames for next step
-           
+                    
                     
                     //            NSValue *value = [NSValue valueWithCGRect:_button.frame];
                     //            if ([arrayFrames containsObject:value]) {
@@ -182,7 +175,7 @@ class FFDayCell: UICollectionViewCell {
                     //            [arrayFrames addObject:value];
                     
                 }
-
+                
             }
             
             //        // Recaulate frames of buttons that have the same begin and end date
@@ -201,40 +194,37 @@ class FFDayCell: UICollectionViewCell {
     
     private func reloadLabelRed() {
         
-        if let dateUnw = date {
+        if let date = date, let arrayLabelsHourAndMin = arrayLabelsHourAndMin {
             
-            if let arrayLabelsHourAndMinUnw = arrayLabelsHourAndMin {
-                
-                labelWithSameYOfCurrentHour?.alpha = 1
-                let compNow = NSDate.componentsOfCurrentDate()
-                let boolIsToday = NSDate.isTheSameDateTheCompA(compNow, andCompB:dateUnw.components())
-                
-                if boolIsToday {
+            labelWithSameYOfCurrentHour?.alpha = 1
+            let compNow = NSDate.componentsOfCurrentDate()
+            let boolIsToday = NSDate.isTheSameDateTheCompA(compNow, andCompB:date.components())
+            
+//            if boolIsToday {
+            
+                for label in arrayLabelsHourAndMin {
                     
-                    for label in arrayLabelsHourAndMinUnw {
+                    let compLabel = label.dateHourAndMin.components()
+                    if compLabel.hour == compNow.hour && compLabel.minute <= compNow.minute && compNow.minute < compLabel.minute+k_MINUTES_PER_LABEL {
                         
-                        let compLabel = label.dateHourAndMin.components()
-                        if compLabel.hour == compNow.hour && compLabel.minute <= compNow.minute && compNow.minute < compLabel.minute+k_MINUTES_PER_LABEL {
+                        if let frame = labelRed?.frame {
                             
-                            if let frameUnw = labelRed?.frame {
-                                
-                                //    CGRect frame = labelRed.frame;
-                                //    frame.origin.y = label.frame.origin.y;
-                                //    [labelRed setFrame:frame];
-                                labelRed?.frame = CGRectMake(frameUnw.origin.x, label.frame.origin.y, frameUnw.size.width, frameUnw.size.height)
-                                labelRed?.dateHourAndMin = NSDate()
-                                labelRed?.showText
-                                
-                                labelWithSameYOfCurrentHour = label
-                                break
-                            }
+                            labelRed?.frame = label.frame
+                            labelRed?.dateHourAndMin = NSDate()
+                            labelRed?.showText
+                            
+                            labelWithSameYOfCurrentHour = label
+                            
+                            break
                         }
                     }
                 }
-                
-                labelRed?.alpha = CGFloat(boolIsToday)
-                labelWithSameYOfCurrentHour?.alpha = CGFloat(!boolIsToday)
-            }
+//            }
+            
+            labelRed?.alpha = 1
+            
+//            labelRed?.alpha = CGFloat(boolIsToday)
+//            labelWithSameYOfCurrentHour?.alpha = CGFloat(!boolIsToday)
         }
     }
     
@@ -243,8 +233,8 @@ class FFDayCell: UICollectionViewCell {
     private func buttonAction(sender: AnyObject?) {
         
         if let button = sender as? FFBlueButton, let protocolCustom = protocolCustom {
-                
-                protocolCustom.cell(self, showViewDetailsWithEvent: button.event)
+            
+            protocolCustom.cell(self, showViewDetailsWithEvent: button.event)
         }
     }
 }

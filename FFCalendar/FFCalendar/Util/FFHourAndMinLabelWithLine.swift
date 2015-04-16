@@ -20,6 +20,7 @@ class FFHourAndMinLabelWithLine: FFHourAndMinLabel {
         super.init(date: date)
         
         viewLine = UIView()
+        self.font = UIFont.systemFontOfSize(isIphone ? 7 : 20)
         
         if let viewLine = viewLine {
             

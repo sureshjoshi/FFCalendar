@@ -10,7 +10,8 @@ import UIKit
 
 protocol FFDayCollectionViewProtocol {
     
-    func updateHeader()
+    func collectionView(collectionView: UICollectionView, updateHeaderWithDate date: NSDate)
+    func collectionView(collectionView: UICollectionView, showViewDetailsWithEvent event: FFEvent?)
 }
 
 class FFDayCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, FFDayCellProtocol {
@@ -88,6 +89,7 @@ class FFDayCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
         return size
     }
     
+    
     // MARK: - UIScrollView Delegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -123,8 +125,10 @@ class FFDayCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
             scrollDirection = ScrollDirection.None
         }
         
-        FFDateManager.sharedManager.dateCalendar = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.year)
-        protocolCustom?.updateHeader()
+        if let date = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.year) {
+            
+            protocolCustom?.collectionView(self, updateHeaderWithDate: date)
+        }
         
         boolGoPrevious = false
         boolGoNext = false
@@ -134,6 +138,6 @@ class FFDayCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     
     func cell(cell: UICollectionViewCell, showViewDetailsWithEvent event: FFEvent?) {
         
-        
+        protocolCustom?.collectionView(self, showViewDetailsWithEvent: event)
     }
 }

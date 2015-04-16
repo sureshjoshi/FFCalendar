@@ -15,7 +15,7 @@ protocol FFDayCalendarViewDelegate {
 
 // MARK: -
 
-class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
+class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollectionViewProtocol, FFDayCollectionViewProtocol {
     
     // MARK: - Properties
     
@@ -68,6 +68,24 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate {
     // MARK: - Tap Gesture
     
     func handleTap(recognizer: UITapGestureRecognizer) {
+        
+    }
+    
+    // MARK: - FFDayHeaderCollectionView Protocol
+    
+    func collectionView(collectionView: UICollectionView, dateSelected date: NSDate) {
+        
+        FFDateManager.sharedManager.dateCalendar = date
+    }
+    
+    // MARK: - FFDayCollectionView Protocol
+    
+    func collectionView(collectionView: UICollectionView, updateHeaderWithDate date: NSDate) {
+        
+        FFDateManager.sharedManager.dateCalendar = date
+    }
+    
+    func collectionView(collectionView: UICollectionView, showViewDetailsWithEvent event: FFEvent?) {
         
     }
     
