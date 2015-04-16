@@ -69,10 +69,10 @@ class FFDayHeaderCell: UICollectionViewCell {
     func buttonAction(sender: AnyObject?) {
         
         if let date = button.date {
+            
+            FFDateManager.sharedManager.dateCalendar = date
             protocolCustom?.cell(self, dateSelected: date)
         }
-        
-        FFDateManager.sharedManager.dateCalendar = button.date
     }
     
     // MARK: - Add Subviews

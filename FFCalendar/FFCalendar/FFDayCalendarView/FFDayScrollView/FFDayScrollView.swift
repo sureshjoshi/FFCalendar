@@ -52,7 +52,6 @@ class FFDayScrollView: UIScrollView {
         
         collectionViewDay = FFDayCollectionView(frame: CGRectZero, collectionViewLayout: FFDayCollectionViewFlowLayout())
         collectionViewDay.setTranslatesAutoresizingMaskIntoConstraints(false)
-        collectionViewDay.backgroundColor = UIColor.yellowColor()
         self.addSubview(collectionViewDay)
         
         let k_COLLECTIONVIEWDAY = "collectionViewDay"

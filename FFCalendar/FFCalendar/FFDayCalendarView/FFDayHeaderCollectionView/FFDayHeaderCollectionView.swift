@@ -19,6 +19,7 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     var protocolCustom: FFDayHeaderCollectionViewProtocol?
     
+    private let quantityByPaging: Int = 7
     private var lastContentOffset: CGFloat?
     private var boolGoPrevious: Bool = false
     private var boolGoNext: Bool = false
@@ -109,6 +110,7 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
             cell.date = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: 1+indexPath.row-(compFirstDayOfMonth.weekday-1)-7)
             
             if cell.selected, let dateCell = cell.date {
+                FFDateManager.sharedManager.dateCalendar = dateCell
                 protocolCustom?.dateSelected(dateCell)
             }
         }
@@ -120,7 +122,14 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: (self.frame.size.width-CGFloat(k_SPACE_COLLECTIONVIEW_CELL*(k_QNT_BY_PAGING-1)))/CGFloat(k_QNT_BY_PAGING), height: self.frame.size.height)
+        var size = CGSizeZero
+        
+        if let collectionViewLayout = collectionViewLayout as? FFDayHeaderCollectionViewFlowLayout {
+            
+            size = CGSize(width: (self.frame.size.width-collectionViewLayout.spaceBetweenCells*(CGFloat(quantityByPaging-1)))/CGFloat(quantityByPaging), height: self.frame.size.height)
+        }
+        
+        return size
     }
     
     // MARK: - UIScrollView Delegate
@@ -148,20 +157,18 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
 
         if lastContentOffset > scrollView.contentOffset.x || boolGoPrevious {
             scrollDirection = ScrollDirection.Right
-            compCalendar.day -= k_QNT_BY_PAGING
-            
+            compCalendar.day -= quantityByPaging
+
         } else if lastContentOffset < scrollView.contentOffset.x || boolGoNext {
             scrollDirection = ScrollDirection.Left
-            compCalendar.day += k_QNT_BY_PAGING
+            compCalendar.day += quantityByPaging
             
         } else {
             scrollDirection = ScrollDirection.None
         }
         
+        FFDateManager.sharedManager.dateCalendar = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.day)
         protocolCustom?.dateSelected(FFDateManager.sharedManager.dateCalendar)
-        
-        let date = NSCalendar.currentCalendar().dateFromComponents(compCalendar)
-        FFDateManager.sharedManager.dateCalendar = date
         
         boolGoPrevious = false
         boolGoNext = false
@@ -172,6 +179,7 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     func cell(cell: UICollectionViewCell, dateSelected date: NSDate) {
         
         protocolCustom?.dateSelected(date)
+        
         self.reloadData()
     }
 }

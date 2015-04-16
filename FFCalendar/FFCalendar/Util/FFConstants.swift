@@ -26,11 +26,8 @@ let k_HEIGHT_CELL_MIN: Int = k_HEIGHT_CELL_HOUR/k_MINUTES_INTERVAL
 
 let k_DATE_MANAGER_DATE_CHANGED = "br.com.FFCalendar.DateManager.DateChanged"
 
-let k_SPACE_COLLECTIONVIEW_CELL = 2
 let k_HEADER_HEIGHT_SCROLL = 100
 
 let k_CELL = "cell"
-
-let k_QNT_BY_PAGING = 7
 
 let isIphone = (UIDevice.currentDevice().userInterfaceIdiom == .Phone)

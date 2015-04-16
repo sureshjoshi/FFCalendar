@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FFDayCellDelegate {
+protocol FFDayCellProtocol {
     
     func cell(cell: UICollectionViewCell, showViewDetailsWithEvent event: FFEvent?)
 }
@@ -19,7 +19,7 @@ class FFDayCell: UICollectionViewCell {
     
     // MARK: - Properties
     
-    var delegate: FFDayCellDelegate?
+    var protocolCustom: FFDayCellProtocol?
     var date: NSDate?
     
     private var arrayLabelsHourAndMin: Array<FFHourAndMinLabel>? = []
@@ -44,7 +44,7 @@ class FFDayCell: UICollectionViewCell {
     
     // MARK: - Public Methods
     
-    func showEventsOfArray(array: Array<FFEvent>) {
+    func showEventsOfArray(array: Array<FFEvent>?) {
         
         addButtonsOfArray(array)
     }
@@ -242,12 +242,9 @@ class FFDayCell: UICollectionViewCell {
     
     private func buttonAction(sender: AnyObject?) {
         
-        if let button = sender as? FFBlueButton {
-            
-            if let delegatelUnw = delegate {
+        if let button = sender as? FFBlueButton, let protocolCustom = protocolCustom {
                 
-                delegate?.cell(self, showViewDetailsWithEvent: button.event)
-            }
+                protocolCustom.cell(self, showViewDetailsWithEvent: button.event)
         }
     }
 }

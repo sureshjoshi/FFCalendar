@@ -8,6 +8,19 @@
 
 import UIKit
 
-class FFDayCollectionViewFlowLayout: UICollectionViewFlowLayout {
-   
+class FFDayCollectionViewFlowLayout: FFDayHeaderCollectionViewFlowLayout {
+    
+    // MARK: - Lifecycle
+    
+    override init() {
+        
+        super.init()
+        
+        self.spaceBetweenCells = 0
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
 }
