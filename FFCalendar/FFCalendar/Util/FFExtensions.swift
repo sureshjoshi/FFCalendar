@@ -135,3 +135,47 @@ extension UILabel {
         return rectText.size.width;
     }
 }
+
+extension NSLayoutConstraint {
+    
+    // Returns constraints that will cause a set of subviews to be evenly distributed along an axis.
+    
+    class func constraintsAlongAxisWithViews(arrayViews: Array<UIView>, horizontalOrVerticalAxis axis: String, verticalMargin: Int, horizontalMargin: Int, innerMargin: Int) -> Array<AnyObject> {
+        
+        var arrayConstraints: Array<AnyObject> = []
+        var dictViews: Dictionary<String, UIView> = [:]
+        var stringGlobalFormat = String(format: "%@:|-%d-", axis, axis=="V" ? verticalMargin : horizontalMargin)
+        
+        for var i:Int = 0; i < arrayViews.count; i++ {
+            
+            let stringKeyBefore = String(format: "view%i", i-1)
+            let stringKey = String(format: "view%i", i)
+            
+            dictViews[stringKey] = arrayViews[i]
+            
+            if i == 0 {
+                stringGlobalFormat += String(format: "[%@]-%d-", stringKey, innerMargin)
+                
+            } else if i == arrayViews.count-1 {
+                stringGlobalFormat += String(format: "[%@(==%@)]-", stringKey, stringKeyBefore)
+                
+            } else {
+                stringGlobalFormat += String(format: "[%@(==%@)]-%d-", stringKey, stringKeyBefore, innerMargin)
+            }
+            
+            let stringLocalFormat = String(format: "%@:|-%d-[%@]-%d-|", axis=="V" ? "H" : "V", axis=="V" ? horizontalMargin : verticalMargin, stringKey, axis=="V" ? horizontalMargin : verticalMargin)
+            
+            arrayConstraints += NSLayoutConstraint.constraintsWithVisualFormat(stringLocalFormat, options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews)
+            
+            // println(stringLocalFormat)
+        }
+        
+        stringGlobalFormat += String(format: "%d-|", axis=="V" ? verticalMargin : horizontalMargin)
+        
+        // println(stringGlobalFormat)
+        
+        arrayConstraints += NSLayoutConstraint.constraintsWithVisualFormat(stringGlobalFormat, options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews)
+        
+        return arrayConstraints
+    }
+}

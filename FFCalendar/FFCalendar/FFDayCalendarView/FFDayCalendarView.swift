@@ -27,7 +27,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
     private var viewDetail: FFEventDetailView!
     private var viewEdit: FFEditEventView!
     
-    private var boolAnimate: Bool?
+    private var boolAnimate: Bool! = false
     
     // MARK: - Lifecycle
     
@@ -37,10 +37,9 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
         addSubviews()
         
-        self.backgroundColor = UIColor.whiteColor()
-        boolAnimate = false
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("dateChanged:"), name: k_DATE_MANAGER_DATE_CHANGED, object: nil)
+        
+        self.backgroundColor = UIColor.whiteColor()
         
         let gesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         gesture.delegate = self
@@ -56,7 +55,6 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
     func invalidateLayout() {
         
         collectionViewHeaderDay.collectionViewLayout.invalidateLayout()
-        
     }
     
     // MARK: - FFDateManager Notification

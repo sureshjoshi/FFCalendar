@@ -15,6 +15,7 @@ class FFDayScrollView: UIScrollView {
     private var dictEvents: Dictionary<NSDate, Array<FFEvent>>? {
 
         didSet {
+            
             collectionViewDay.dictEvents = dictEvents
             collectionViewDay.reloadData()
         }

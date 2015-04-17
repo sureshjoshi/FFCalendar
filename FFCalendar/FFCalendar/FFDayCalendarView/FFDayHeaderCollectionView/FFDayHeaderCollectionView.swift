@@ -19,10 +19,10 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     
     var protocolCustom: FFDayHeaderCollectionViewProtocol?
     
-    private let quantityByPaging: Int = 7
+    private let quantityByPaging: Int! = 7
     private var lastContentOffset: CGFloat?
-    private var boolGoPrevious: Bool = false
-    private var boolGoNext: Bool = false
+    private var boolGoPrevious: Bool! = false
+    private var boolGoNext: Bool! = false
     
     // MARK: - Lifecycle
     
@@ -155,11 +155,11 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
         let compCalendar = FFDateManager.sharedManager.dateCalendar.components()
         let scrollDirection: ScrollDirection
 
-        if lastContentOffset > scrollView.contentOffset.x || boolGoPrevious {
+        if lastContentOffset > scrollView.contentOffset.x || boolGoPrevious == true {
             scrollDirection = ScrollDirection.Right
             compCalendar.day -= quantityByPaging
 
-        } else if lastContentOffset < scrollView.contentOffset.x || boolGoNext {
+        } else if lastContentOffset < scrollView.contentOffset.x || boolGoNext == true {
             scrollDirection = ScrollDirection.Left
             compCalendar.day += quantityByPaging
             

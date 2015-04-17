@@ -15,6 +15,7 @@ class FFDateManager: NSObject {
     var dateCalendar: NSDate! {
 
         didSet {
+            
             NSNotificationCenter.defaultCenter().postNotificationName(k_DATE_MANAGER_DATE_CHANGED, object: dateCalendar)
         }
     }

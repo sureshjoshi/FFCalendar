@@ -12,9 +12,9 @@ class FFFixedSpaceCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     // MARK - Properties
     
-    var spaceBetweenCells: CGFloat = 2
+    var spaceBetweenCells: CGFloat! = 2
     
-    // MARK: - Forcing de max space between cells to be equal to k_SPACE_COLLECTIONVIEW_CELL
+    // MARK: - Forcing de max space between cells to be equal to spaceBetweenCells
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
         
@@ -76,5 +76,4 @@ class FFFixedSpaceCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return currentItemAttributes;
     }
-
 }

@@ -10,7 +10,11 @@ import UIKit
 
 class FFCalendarViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var calendarDayView: FFDayCalendarView!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         
@@ -28,6 +32,8 @@ class FFCalendarViewController: UIViewController {
         
         self.view.layoutIfNeeded()
     }
+    
+    // MARK: - Rotation
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         

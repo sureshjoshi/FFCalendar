@@ -31,7 +31,7 @@ class FFHourAndMinLabelWithLine: FFHourAndMinLabel {
             self.addConstraint(constraintViewLineWidth)
             self.addConstraint(NSLayoutConstraint(item: viewLine, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
             self.addConstraint(NSLayoutConstraint(item: viewLine, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
-            self.addConstraint(NSLayoutConstraint(item: viewLine, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0, constant: 1))
+            self.addConstraint(NSLayoutConstraint(item: viewLine, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 0, constant: 0.5))
         }
         
         self.textColor = UIColor.blackColor()
@@ -61,15 +61,15 @@ class FFHourAndMinLabelWithLine: FFHourAndMinLabel {
     override var textColor: UIColor! {
         
         didSet {
-            if let viewLine = viewLine {
-                viewLine.backgroundColor = self.textColor
-            }
+            
+            viewLine?.backgroundColor = self.textColor
         }
     }
     
     override var text: String! {
         
         didSet {
+            
             self.layoutIfNeeded()
         }
     }
@@ -77,6 +77,7 @@ class FFHourAndMinLabelWithLine: FFHourAndMinLabel {
     override var font: UIFont! {
         
         didSet {
+            
             self.layoutIfNeeded()
         }
     }

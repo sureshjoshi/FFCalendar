@@ -25,6 +25,7 @@ class FFDayHeaderCell: UICollectionViewCell {
     var date: NSDate? {
         
         didSet {
+            
             self.button.date = date
             
             if let comp = date?.components() {
@@ -47,7 +48,6 @@ class FFDayHeaderCell: UICollectionViewCell {
     }
 
     required init(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)
     }
     
