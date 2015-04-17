@@ -8,12 +8,19 @@
 
 import UIKit
 
-class FFDayScrollView: UIScrollView {
+protocol FFDayScrollViewProtocol {
+    
+    func updateHeaderWithDate(date: NSDate)
+    func showViewDetailsWithEvent(event: FFEvent?)
+}
+
+class FFDayScrollView: UIScrollView, FFDayCollectionViewProtocol {
     
     // MARK: - Properties
     
-    private var dictEvents: Dictionary<NSDate, Array<FFEvent>>? {
-
+    var protocolCustom: FFDayScrollViewProtocol?
+    var dictEvents: Dictionary<NSDate, Array<FFEvent>>? {
+        
         didSet {
             
             collectionViewDay.dictEvents = dictEvents
@@ -22,8 +29,7 @@ class FFDayScrollView: UIScrollView {
     }
     
     private var collectionViewDay: FFDayCollectionView!
-//    private var labelWithActualHour: FFHourAndMinLabelWithLine!
-    
+    //    private var labelWithActualHour: FFHourAndMinLabelWithLine!
     
     // MARK: - Lifecycle
     
@@ -53,6 +59,7 @@ class FFDayScrollView: UIScrollView {
         
         collectionViewDay = FFDayCollectionView(frame: CGRectZero, collectionViewLayout: FFDayCollectionViewFlowLayout())
         collectionViewDay.setTranslatesAutoresizingMaskIntoConstraints(false)
+        collectionViewDay.protocolCustom = self
         self.addSubview(collectionViewDay)
         
         let k_COLLECTIONVIEWDAY = "collectionViewDay"
@@ -88,5 +95,29 @@ class FFDayScrollView: UIScrollView {
     func invalidateLayout() {
         
         collectionViewDay.collectionViewLayout.invalidateLayout()
+    }
+    
+    // MARK: - Reload data of colectionView
+    
+    func reloadData() {
+        
+        collectionViewDay.reloadData()
+    }
+    
+    func scrollToItemAtIndexPath(indexPath: NSIndexPath, animated: Bool) {
+        
+        collectionViewDay.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Left, animated: animated)
+    }
+    
+    // MARK: - FFDayCollectionViewProtocol
+    
+    func collectionView(collectionView: UICollectionView, updateHeaderWithDate date: NSDate) {
+        
+        protocolCustom?.updateHeaderWithDate(date)
+    }
+    
+    func collectionView(collectionView: UICollectionView, showViewDetailsWithEvent event: FFEvent?) {
+        
+        protocolCustom?.showViewDetailsWithEvent(event)
     }
 }

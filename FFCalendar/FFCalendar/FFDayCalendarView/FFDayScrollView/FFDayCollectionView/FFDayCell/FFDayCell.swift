@@ -47,16 +47,7 @@ class FFDayCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - Public Methods
-    
-    func showEventsOfArray(array: Array<FFEvent>?) {
-        
-        addButtonsOfArray(array)
-    }
-    
-    // MARK: - Private Methods
-    
-    // MARK: -- Add Lines
+    // MARK: - Add Lines
     
     private func addLines() {
         
@@ -124,7 +115,6 @@ class FFDayCell: UICollectionViewCell {
                     }
                 }
                 
-                self.updateConstraints()
                 self.layoutIfNeeded()
             }
             
@@ -133,9 +123,9 @@ class FFDayCell: UICollectionViewCell {
         }
     }
     
-    // MARK: -- Add Event Buttons
+    // MARK: - Show events
     
-    private func addButtonsOfArray(arrayEvents: Array<FFEvent>?) {
+    func showEventsOfArray(arrayEvents: Array<FFEvent>?) {
         
         for subview in self.subviews {
             
@@ -155,8 +145,16 @@ class FFDayCell: UICollectionViewCell {
             
             for event in arrayEvents {
                 
-                var yTimeBegin: CGFloat = 0
-                var yTimeEnd: CGFloat = 0
+                let button = FFBlueButton()
+                button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+                button.setTitle(event.stringCustomerName, forState: UIControlState.Normal)
+                button.event = event
+                self.addSubview(button)
+                
+                arrayButtonsEvents.append(button)
+                
+                var labelBegin: UILabel = UILabel()
+                var labelEnd: UILabel = UILabel()
                 
                 for label in arrayLabelsHourAndMin {
                     
@@ -165,22 +163,20 @@ class FFDayCell: UICollectionViewCell {
                     let compEventEnd = event.dateTimeEnd.components()
                     
                     if compLabel.hour == compEventBegin.hour && compLabel.minute <= compEventBegin.minute && compEventBegin.minute < compLabel.minute+k_MINUTES_PER_LABEL {
-                        yTimeBegin = label.frame.origin.y+label.frame.size.height/2
+                        labelBegin = label
                     }
                     
                     if compLabel.hour == compEventEnd.hour && compLabel.minute <= compEventEnd.minute && compEventEnd.minute < compLabel.minute+k_MINUTES_PER_LABEL {
-                        yTimeEnd = label.frame.origin.y+label.frame.size.height
+                        labelEnd = label
                     }
                 }
                 
-                let _button = FFBlueButton()
-                _button.frame = CGRect(x: 70, y: yTimeBegin, width: self.frame.size.width-95, height: yTimeEnd-yTimeBegin)
-                _button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
-                _button.setTitle(event.stringCustomerName, forState: UIControlState.Normal)
-                _button.event = event
+                let k_button = "button"
+                let dictViews = [k_button: button]
                 
-                arrayButtonsEvents.append(_button)
-                self.addSubview(_button)
+                self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format: "H:|-70-[%@]-70-|"), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
+                self.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: labelBegin, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+                self.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: labelEnd, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
                 
                 // Save Frames for next step
                 
@@ -198,6 +194,8 @@ class FFDayCell: UICollectionViewCell {
                 //            [arrayFrames addObject:value];
             }
             
+            self.layoutIfNeeded()
+            
             //        // Recaulate frames of buttons that have the same begin and end date
             //        for (NSValue *value in dictButtonsWithSameFrame) {
             //            NSArray *array = [dictButtonsWithSameFrame objectForKey:value];
@@ -209,10 +207,9 @@ class FFDayCell: UICollectionViewCell {
             //        }
             
         }
-        
     }
     
-    // MARK: -- Action
+    // MARK: - Action
     
     private func buttonAction(sender: AnyObject?) {
         

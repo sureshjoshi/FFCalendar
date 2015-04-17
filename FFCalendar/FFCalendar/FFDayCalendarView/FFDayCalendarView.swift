@@ -8,19 +8,25 @@
 
 import UIKit
 
-protocol FFDayCalendarViewDelegate {
+protocol FFDayCalendarViewProtocol {
     
-    func setNewDictionary(dict: Dictionary<NSDate, Array<FFEvent>>)
+    func updateCalendarWithNewDictionary(dict: Dictionary<NSDate, Array<FFEvent>>)
 }
 
 // MARK: -
 
-class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollectionViewProtocol, FFDayCollectionViewProtocol {
+class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollectionViewProtocol, FFDayScrollViewProtocol {
     
     // MARK: - Properties
     
-    var protocolCustom: FFDayCalendarViewDelegate?
-    var dictEvents: Dictionary<NSDate, Array<FFEvent>>?
+    var protocolCustom: FFDayCalendarViewProtocol?
+    var dictEvents: Dictionary<NSDate, Array<FFEvent>>? {
+        
+        didSet {
+            
+            dayContainerScroll.dictEvents = dictEvents
+        }
+    }
     
     private var collectionViewHeaderDay: FFDayHeaderCollectionView!
     private var dayContainerScroll: FFDayScrollView!
@@ -56,12 +62,24 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
         collectionViewHeaderDay.collectionViewLayout.invalidateLayout()
         dayContainerScroll.invalidateLayout()
+        dateChanged(nil)
     }
     
     // MARK: - FFDateManager Notification
     
-    func dateChanged(not: NSNotification) {
+    func dateChanged(not: NSNotification?) {
+        
+        dayContainerScroll.reloadData()
+        dayContainerScroll.scrollToItemAtIndexPath(NSIndexPath(forItem: FFDateManager.sharedManager.dateCalendar.components().day-1+7, inSection: 0), animated: boolAnimate)
+        
+        boolAnimate = false
+        
+        updateHeaderWithDate(FFDateManager.sharedManager.dateCalendar)
     
+        //    if ([NSDate isTheSameDateTheCompA:[NSDate componentsOfCurrentDate] compB:[NSDate componentsOfDate:[[FFDateManager sharedManager] currentDate]]]) {
+        //        [dayContainerScroll scrollRectToVisible:CGRectMake(0, dayContainerScroll.labelWithActualHour.frame.origin.y, dayContainerScroll.frame.size.width, dayContainerScroll.frame.size.height) animated:YES];
+        //    }
+
     }
     
     // MARK: - Tap Gesture
@@ -77,14 +95,14 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         FFDateManager.sharedManager.dateCalendar = date
     }
     
-    // MARK: - FFDayCollectionView Protocol
+    // MARK: - FFDayScrollViewProtocol Protocol
     
-    func collectionView(collectionView: UICollectionView, updateHeaderWithDate date: NSDate) {
+    func updateHeaderWithDate(date: NSDate) {
         
         FFDateManager.sharedManager.dateCalendar = date
     }
     
-    func collectionView(collectionView: UICollectionView, showViewDetailsWithEvent event: FFEvent?) {
+    func showViewDetailsWithEvent(event: FFEvent?) {
         
     }
     
