@@ -62,7 +62,7 @@ class FFDayCell: UICollectionViewCell {
         
         let compNow = NSDate.componentsOfCurrentDate()
         
-        let heightOneHour = self.frame.size.height/CGFloat(24*60/k_MINUTES_PER_LABEL)
+        // let heightOneHour = self.frame.size.height/CGFloat(24*60/k_MINUTES_PER_LABEL)
         
         for var hour = 0; hour < 24; hour++ {
             
@@ -175,8 +175,8 @@ class FFDayCell: UICollectionViewCell {
             let compNow = NSDate.componentsOfCurrentDate()
             let boolIsToday = NSDate.isTheSameDateTheCompA(compNow, andCompB:date.components())
             
-//            if boolIsToday {
-            
+            if boolIsToday {
+                
                 for label in arrayLabelsHourAndMin {
                     
                     let compLabel = label.dateHourAndMin.components()
@@ -200,17 +200,15 @@ class FFDayCell: UICollectionViewCell {
                         self.addConstraints(arrayConstraintsLabelRed!)
                         
                         break
-                        
                     }
                 }
+                
+                self.updateConstraints()
+                self.layoutIfNeeded()
+            }
             
-            self.updateConstraints()
-            self.layoutIfNeeded()
-//            }
-            
-            labelRed.alpha = 1
-//            labelRed.alpha = CGFloat(boolIsToday)
-//            labelBottomLabelRed?.alpha = CGFloat(!boolIsToday)
+            labelRed.alpha = CGFloat(boolIsToday)
+            labelBottomLabelRed?.alpha = CGFloat(!boolIsToday)
         }
     }
     
