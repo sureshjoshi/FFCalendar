@@ -82,4 +82,11 @@ class FFDayScrollView: UIScrollView {
 //
 //        [self scrollRectToVisible:CGRectMake(0, labelWithActualHour.frame.origin.y, self.frame.size.width, self.frame.size.height) animated:NO];
     }
+    
+    // MARK: - Invalidate Layout
+    
+    func invalidateLayout() {
+        
+        collectionViewDay.collectionViewLayout.invalidateLayout()
+    }
 }

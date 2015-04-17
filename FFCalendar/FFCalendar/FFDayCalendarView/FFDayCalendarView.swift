@@ -55,6 +55,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
     func invalidateLayout() {
         
         collectionViewHeaderDay.collectionViewLayout.invalidateLayout()
+        dayContainerScroll.invalidateLayout()
     }
     
     // MARK: - FFDateManager Notification
