@@ -88,85 +88,6 @@ class FFDayCell: UICollectionViewCell {
         reloadLabelRed()
     }
     
-    // MARK: -- Add Event Buttons
-    
-    private func addButtonsOfArray(arrayEvents: Array<FFEvent>?) {
-        
-        for subview in self.subviews {
-            
-            if let subview = subview as? FFBlueButton  {
-                
-                subview.removeFromSuperview()
-            }
-        }
-        
-        arrayButtonsEvents.removeAll()
-        reloadLabelRed()
-        
-        if let arrayEvents = arrayEvents {
-            
-            let arrayFrames = []
-            let dictButtonsWithSameFrame = [:]
-            
-            for event in arrayEvents {
-                
-                var yTimeBegin: CGFloat = 0
-                var yTimeEnd: CGFloat = 0
-                
-                for label in arrayLabelsHourAndMin {
-                    
-                    let compLabel = label.dateHourAndMin.components()
-                    let compEventBegin = event.dateTimeBegin.components()
-                    let compEventEnd = event.dateTimeEnd.components()
-                    
-                    if compLabel.hour == compEventBegin.hour && compLabel.minute <= compEventBegin.minute && compEventBegin.minute < compLabel.minute+k_MINUTES_PER_LABEL {
-                        yTimeBegin = label.frame.origin.y+label.frame.size.height/2
-                    }
-                    
-                    if compLabel.hour == compEventEnd.hour && compLabel.minute <= compEventEnd.minute && compEventEnd.minute < compLabel.minute+k_MINUTES_PER_LABEL {
-                        yTimeEnd = label.frame.origin.y+label.frame.size.height
-                    }
-                }
-                
-                let _button = FFBlueButton()
-                _button.frame = CGRect(x: 70, y: yTimeBegin, width: self.frame.size.width-95, height: yTimeEnd-yTimeBegin)
-                _button.addTarget(self, action: Selector("buttonAction"), forControlEvents: UIControlEvents.TouchUpInside)
-                _button.setTitle(event.stringCustomerName, forState: UIControlState.Normal)
-                _button.event = event
-                
-                arrayButtonsEvents.append(_button)
-                self.addSubview(_button)
-                
-                // Save Frames for next step
-                
-                
-                //            NSValue *value = [NSValue valueWithCGRect:_button.frame];
-                //            if ([arrayFrames containsObject:value]) {
-                //                NSMutableArray *array = [dictButtonsWithSameFrame objectForKey:value];
-                //                if (!array){
-                //                    array = [[NSMutableArray alloc] initWithObjects:[arrayButtonsEvents objectAtIndex:[arrayFrames indexOfObject:value]], nil];
-                //
-                //                }
-                //                [array addObject:_button];
-                //                [dictButtonsWithSameFrame setObject:array forKey:value];
-                //            }
-                //            [arrayFrames addObject:value];
-            }
-            
-            //        // Recaulate frames of buttons that have the same begin and end date
-            //        for (NSValue *value in dictButtonsWithSameFrame) {
-            //            NSArray *array = [dictButtonsWithSameFrame objectForKey:value];
-            //            CGFloat width = (self.frame.size.width-95.)/array.count;
-            //            for (int i = 0; i < array.count; i++) {
-            //                UIButton *buttonInsideArray = [array objectAtIndex:i];
-            //                [buttonInsideArray setFrame:CGRectMake(70+i*width, buttonInsideArray.frame.origin.y, width, buttonInsideArray.frame.size.height)];
-            //            }
-            //        }
-            
-        }
-        
-    }
-    
     private func reloadLabelRed() {
         
         if let date = date {
@@ -210,6 +131,85 @@ class FFDayCell: UICollectionViewCell {
             labelRed.alpha = CGFloat(boolIsToday)
             labelBottomLabelRed?.alpha = CGFloat(!boolIsToday)
         }
+    }
+    
+    // MARK: -- Add Event Buttons
+    
+    private func addButtonsOfArray(arrayEvents: Array<FFEvent>?) {
+        
+        for subview in self.subviews {
+            
+            if let subview = subview as? FFBlueButton  {
+                
+                subview.removeFromSuperview()
+            }
+        }
+        
+        arrayButtonsEvents.removeAll()
+        reloadLabelRed()
+        
+        if let arrayEvents = arrayEvents {
+            
+            let arrayFrames = []
+            let dictButtonsWithSameFrame = [:]
+            
+            for event in arrayEvents {
+                
+                var yTimeBegin: CGFloat = 0
+                var yTimeEnd: CGFloat = 0
+                
+                for label in arrayLabelsHourAndMin {
+                    
+                    let compLabel = label.dateHourAndMin.components()
+                    let compEventBegin = event.dateTimeBegin.components()
+                    let compEventEnd = event.dateTimeEnd.components()
+                    
+                    if compLabel.hour == compEventBegin.hour && compLabel.minute <= compEventBegin.minute && compEventBegin.minute < compLabel.minute+k_MINUTES_PER_LABEL {
+                        yTimeBegin = label.frame.origin.y+label.frame.size.height/2
+                    }
+                    
+                    if compLabel.hour == compEventEnd.hour && compLabel.minute <= compEventEnd.minute && compEventEnd.minute < compLabel.minute+k_MINUTES_PER_LABEL {
+                        yTimeEnd = label.frame.origin.y+label.frame.size.height
+                    }
+                }
+                
+                let _button = FFBlueButton()
+                _button.frame = CGRect(x: 70, y: yTimeBegin, width: self.frame.size.width-95, height: yTimeEnd-yTimeBegin)
+                _button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+                _button.setTitle(event.stringCustomerName, forState: UIControlState.Normal)
+                _button.event = event
+                
+                arrayButtonsEvents.append(_button)
+                self.addSubview(_button)
+                
+                // Save Frames for next step
+                
+                
+                //            NSValue *value = [NSValue valueWithCGRect:_button.frame];
+                //            if ([arrayFrames containsObject:value]) {
+                //                NSMutableArray *array = [dictButtonsWithSameFrame objectForKey:value];
+                //                if (!array){
+                //                    array = [[NSMutableArray alloc] initWithObjects:[arrayButtonsEvents objectAtIndex:[arrayFrames indexOfObject:value]], nil];
+                //
+                //                }
+                //                [array addObject:_button];
+                //                [dictButtonsWithSameFrame setObject:array forKey:value];
+                //            }
+                //            [arrayFrames addObject:value];
+            }
+            
+            //        // Recaulate frames of buttons that have the same begin and end date
+            //        for (NSValue *value in dictButtonsWithSameFrame) {
+            //            NSArray *array = [dictButtonsWithSameFrame objectForKey:value];
+            //            CGFloat width = (self.frame.size.width-95.)/array.count;
+            //            for (int i = 0; i < array.count; i++) {
+            //                UIButton *buttonInsideArray = [array objectAtIndex:i];
+            //                [buttonInsideArray setFrame:CGRectMake(70+i*width, buttonInsideArray.frame.origin.y, width, buttonInsideArray.frame.size.height)];
+            //            }
+            //        }
+            
+        }
+        
     }
     
     // MARK: -- Action
