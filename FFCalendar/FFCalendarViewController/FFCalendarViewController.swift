@@ -32,14 +32,17 @@ class FFCalendarViewController: UIViewController, FFDayCalendarViewProtocol {
                     let comp = event.dateDay.components()
                     let newDate = NSDate.dateWithYear(comp.year, month: comp.month, day: comp.day)
                     
-                    var array = dictEvents?[newDate!]
+                    var array:[FFEvent]? = dictEvents?[newDate!]
                     
-                    if let array = array { } else {
-                        array = []
+                    if let arrayC = array {
+                        
+                        array?.append(event)
+                        dictEvents?[newDate!] = array
+                    
+                    } else {
+                        array = [event]
                         dictEvents?[newDate!] = array
                     }
-                    
-                    array?.append(event)
                 }
             }
         }
@@ -56,7 +59,7 @@ class FFCalendarViewController: UIViewController, FFDayCalendarViewProtocol {
         
         addSubviews()
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("dateChanged:"), name: k_DATE_MANAGER_DATE_CHANGED, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("dateChanged:"), name: k_DATE_MANAGER_DATE_CHANGED, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,12 +74,17 @@ class FFCalendarViewController: UIViewController, FFDayCalendarViewProtocol {
     }
     
     // MARK: - Rotation
-    
+
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         
-        calendarDayView.invalidateLayout()
+        self.calendarDayView.invalidateLayout()
+        
+        coordinator.animateAlongsideTransition(nil, completion: {context in
+           
+            self.calendarDayView.dateChanged(nil)
+        })
     }
     
     // MARK: - FFDateManager Notification
@@ -130,6 +138,7 @@ class FFCalendarViewController: UIViewController, FFDayCalendarViewProtocol {
         calendarDayView = FFDayCalendarView()
         calendarDayView.setTranslatesAutoresizingMaskIntoConstraints(false)
         calendarDayView.protocolCustom = self
+        calendarDayView.dictEvents = dictEvents
         self.view.addSubview(calendarDayView)
         
         let k_CALENDAR_DAY = "calendarDay"

@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let vc = FFCalendarViewController()
-//        vc.arrayWithEvents = arrayWithEvents()
+        vc.arrayWithEvents = arrayWithEvents()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
-        self.window?.rootViewController = FFCalendarViewController()
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
         return true
@@ -94,6 +94,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         event5.dateTimeBegin = NSDate.dateWithHour(20, min: 00)
         event5.dateTimeEnd = NSDate.dateWithHour(21, min: 13)
         event5.arrayWithGuests = [[111, "Guest 2", "email2@email.com"], [111, "Guest 4", "email4@email.com"], [111, "Guest 5", "email5@email.com"], [111, "Guest 7", "email7@email.com"]]
+        
+        let event9 = FFEvent()
+        event9.stringCustomerName = "Customer I"
+        event9.numCustomerID = 5
+        event9.dateDay = date
+        event9.dateTimeBegin = NSDate.dateWithHour(20, min: 00)
+        event9.dateTimeEnd = NSDate.dateWithHour(21, min: 13)
+        event9.arrayWithGuests = [[111, "Guest 2", "email2@email.com"], [111, "Guest 4", "email4@email.com"], [111, "Guest 5", "email5@email.com"], [111, "Guest 7", "email7@email.com"]]
 
         
         let event6 = FFEvent()
@@ -120,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         event8.dateTimeEnd = NSDate.dateWithHour(21, min: 13)
         event8.arrayWithGuests = [[111, "Guest 2", "email2@email.com"], [111, "Guest 4", "email4@email.com"], [111, "Guest 5", "email5@email.com"], [111, "Guest 7", "email7@email.com"]]
         
-        return [event1, event2, event3, event4, event5, event6, event7, event8]
+        return [event1, event2, event3, event4, event5, event6, event7, event8, event9]
     }
 }
 

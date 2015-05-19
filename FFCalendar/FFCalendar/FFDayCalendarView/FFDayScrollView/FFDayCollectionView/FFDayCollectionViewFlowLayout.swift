@@ -23,4 +23,17 @@ class FFDayCollectionViewFlowLayout: FFDayHeaderCollectionViewFlowLayout {
         
         super.init(coder: aDecoder)
     }
+    
+    override func collectionViewContentSize() -> CGSize {
+        
+        var size = CGSizeZero
+        
+        if let collectionView = self.collectionView {
+            
+            size = CGSize(width: CGFloat(7*(FFDateManager.sharedManager.dateCalendar.numberOfWeekInMonthCount()+2))*collectionView.frame.size.width, height: collectionView.frame.size.height)
+        }
+        
+        return size
+    }
+
 }

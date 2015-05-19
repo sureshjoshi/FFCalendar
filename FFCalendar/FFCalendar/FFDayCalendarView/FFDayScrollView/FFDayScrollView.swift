@@ -85,8 +85,8 @@ class FFDayScrollView: UIScrollView, FFDayCollectionViewProtocol {
         
         self.layoutIfNeeded()
         
-//        collectionViewDay.scrollToItemAtIndexPath(NSIndexPath(forItem: FFDateManager.sharedManager.dateCalendar.components().day-1+7, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Left, animated: false)
-//
+        scrollToItemAtIndexPath(NSIndexPath(forItem: FFDateManager.sharedManager.dateCalendar.components().day-1+7, inSection: 0), animated: false)
+
 //        [self scrollRectToVisible:CGRectMake(0, labelWithActualHour.frame.origin.y, self.frame.size.width, self.frame.size.height) animated:NO];
     }
     

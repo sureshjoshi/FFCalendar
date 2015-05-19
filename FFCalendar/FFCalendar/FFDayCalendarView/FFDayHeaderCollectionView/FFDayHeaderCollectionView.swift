@@ -153,8 +153,8 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         let compCalendar = FFDateManager.sharedManager.dateCalendar.components()
+        
         let scrollDirection: ScrollDirection
-
         if lastContentOffset > scrollView.contentOffset.x || boolGoPrevious == true {
             scrollDirection = ScrollDirection.Right
             compCalendar.day -= quantityByPaging
@@ -168,8 +168,8 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
         }
         
         if let date = NSDate.dateWithYear(compCalendar.year, month: compCalendar.month, day: compCalendar.day) {
-        
             protocolCustom?.collectionView(self, dateSelected: date)
+            FFDateManager.sharedManager.dateCalendar = date
         }
         
         boolGoPrevious = false
@@ -181,6 +181,8 @@ class FFDayHeaderCollectionView: UICollectionView, UICollectionViewDataSource, U
     func cell(cell: UICollectionViewCell, dateSelected date: NSDate) {
         
         protocolCustom?.collectionView(self, dateSelected: date)
+        
+        FFDateManager.sharedManager.dateCalendar = date
         
         self.reloadData()
     }

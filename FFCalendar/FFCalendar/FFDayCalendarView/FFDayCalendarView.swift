@@ -43,9 +43,9 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
         addSubviews()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("dateChanged:"), name: k_DATE_MANAGER_DATE_CHANGED, object: nil)
-        
         self.backgroundColor = UIColor.whiteColor()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("dateChanged:"), name: k_DATE_MANAGER_DATE_CHANGED, object: nil)
         
         let gesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         gesture.delegate = self
@@ -62,7 +62,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
         collectionViewHeaderDay.collectionViewLayout.invalidateLayout()
         dayContainerScroll.invalidateLayout()
-        dateChanged(nil)
+        //        dateChanged(nil)
     }
     
     // MARK: - FFDateManager Notification
@@ -88,9 +88,18 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
     }
     
+    // MARK: - UIGestureRecognizer Delegate
+    
+    override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        return true
+    }
+    
     // MARK: - FFDayHeaderCollectionView Protocol
     
     func collectionView(collectionView: UICollectionView, dateSelected date: NSDate) {
+        
+        boolAnimate = true
         
         FFDateManager.sharedManager.dateCalendar = date
     }
@@ -99,7 +108,8 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
     
     func updateHeaderWithDate(date: NSDate) {
         
-        FFDateManager.sharedManager.dateCalendar = date
+        collectionViewHeaderDay.reloadData()
+        collectionViewHeaderDay.scrollToDate(date)
     }
     
     func showViewDetailsWithEvent(event: FFEvent?) {
@@ -112,6 +122,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
 
         collectionViewHeaderDay = FFDayHeaderCollectionView(frame: CGRectZero, collectionViewLayout: FFDayHeaderCollectionViewFlowLayout())
         collectionViewHeaderDay.setTranslatesAutoresizingMaskIntoConstraints(false)
+        collectionViewHeaderDay.protocolCustom = self
         self.addSubview(collectionViewHeaderDay)
         
         let k_HEADER = "header"
@@ -123,6 +134,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         
         dayContainerScroll = FFDayScrollView(frame: CGRectZero)
         dayContainerScroll.setTranslatesAutoresizingMaskIntoConstraints(false)
+        dayContainerScroll.protocolCustom = self
         self.addSubview(dayContainerScroll)
 
         let k_CONTAINER = "container"
@@ -134,5 +146,7 @@ class FFDayCalendarView: UIView, UIGestureRecognizerDelegate, FFDayHeaderCollect
         self.addConstraint(NSLayoutConstraint(item: dayContainerScroll, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 0.5, constant: 0))
         
         self.layoutIfNeeded()
+        
+        collectionViewHeaderDay.scrollToDate(FFDateManager.sharedManager.dateCalendar)
     }
 }

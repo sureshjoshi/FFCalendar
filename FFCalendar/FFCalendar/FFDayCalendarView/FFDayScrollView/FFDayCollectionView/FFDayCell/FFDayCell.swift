@@ -146,6 +146,7 @@ class FFDayCell: UICollectionViewCell {
             for event in arrayEvents {
                 
                 let button = FFBlueButton()
+                button.setTranslatesAutoresizingMaskIntoConstraints(false)
                 button.addTarget(self, action: Selector("buttonAction:"), forControlEvents: UIControlEvents.TouchUpInside)
                 button.setTitle(event.stringCustomerName, forState: UIControlState.Normal)
                 button.event = event
@@ -171,12 +172,16 @@ class FFDayCell: UICollectionViewCell {
                     }
                 }
                 
-                let k_button = "button"
-                let dictViews = [k_button: button]
+                let k_BUTTON = "button"
+                let dictViews = [k_BUTTON: button]
                 
-                self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format: "H:|-70-[%@]-70-|"), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
+                let left = isIphone ? 40 : 70
+                
+                self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(String(format: "H:|-%i-[%@]-10-|", left, k_BUTTON), options: NSLayoutFormatOptions(0), metrics: nil, views: dictViews))
                 self.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: labelBegin, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
                 self.addConstraint(NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: labelEnd, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+                
+                self.layoutIfNeeded()
                 
                 // Save Frames for next step
                 
