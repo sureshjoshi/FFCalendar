@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19316B871BE93F60008CA267 /* UIColor+BPColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 19316B861BE93F60008CA267 /* UIColor+BPColors.m */; };
 		55AFEC3D18AC435D005D2B91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC3C18AC435D005D2B91 /* Foundation.framework */; };
 		55AFEC3F18AC435D005D2B91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC3E18AC435D005D2B91 /* CoreGraphics.framework */; };
 		55AFEC4118AC435D005D2B91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC4018AC435D005D2B91 /* UIKit.framework */; };
@@ -77,6 +78,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19316B851BE93F60008CA267 /* UIColor+BPColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BPColors.h"; sourceTree = "<group>"; };
+		19316B861BE93F60008CA267 /* UIColor+BPColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BPColors.m"; sourceTree = "<group>"; };
 		55AFEC3918AC435C005D2B91 /* FFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AFEC3C18AC435D005D2B91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55AFEC3E18AC435D005D2B91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -542,6 +545,8 @@
 		CDA8F1C018DA43EA0080DE6D /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				19316B851BE93F60008CA267 /* UIColor+BPColors.h */,
+				19316B861BE93F60008CA267 /* UIColor+BPColors.m */,
 				CDA8F1F318DA43EA0080DE6D /* FFImportantFilesForCalendar.h */,
 				CDA8F1CF18DA43EA0080DE6D /* FFConstants.h */,
 				CDA8F1D318DA43EA0080DE6D /* FFEvent */,
@@ -758,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA8F21118DA43EA0080DE6D /* FFWeekCollectionViewFlowLayout.m in Sources */,
+				19316B871BE93F60008CA267 /* UIColor+BPColors.m in Sources */,
 				CDA8F20818DA43EA0080DE6D /* FFMonthCollectionViewFlowLayout.m in Sources */,
 				CDA8F22118DA43EA0080DE6D /* FFEvent.m in Sources */,
 				CDA8F16E18DA3B7E0080DE6D /* FFCalendarViewController.m in Sources */,

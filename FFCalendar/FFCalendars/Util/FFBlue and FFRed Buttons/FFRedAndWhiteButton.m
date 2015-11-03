@@ -12,6 +12,8 @@
 
 #import "FFImportantFilesForCalendar.h"
 
+#import "UIColor+BPColors.h"
+
 @implementation FFRedAndWhiteButton
 
 - (id)initWithFrame:(CGRect)frame
@@ -22,13 +24,13 @@
         
         [self setFrame:frame];
         
-        [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor bp_dustyOrangeColor] forState:UIControlStateNormal];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         
         [self setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
-        [self setBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forState:UIControlStateSelected];
+        [self setBackgroundImage:[UIImage imageWithColor:[UIColor bp_dustyOrangeColor]] forState:UIControlStateSelected];
         
-        [self.layer setBorderColor:[UIColor redColor].CGColor];
+        [self.layer setBorderColor:[UIColor bp_dustyOrangeColor].CGColor];
         [self.layer setBorderWidth:1.];
     }
     return self;

@@ -12,6 +12,8 @@
 
 #import "FFCalendar.h"
 
+#import "UIColor+BPColors.h"
+
 @interface FFCalendarViewController () <FFButtonAddEventWithPopoverProtocol, FFYearCalendarViewProtocol, FFMonthCalendarViewProtocol, FFWeekCalendarViewProtocol, FFDayCalendarViewProtocol>
 @property (nonatomic) BOOL boolDidLoad;
 @property (nonatomic) BOOL boolYearViewIsShowing;
@@ -126,7 +128,7 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setBarTintColor:[UIColor lighterGrayCustom]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     
     [self addRightBarButtonItems];
     [self addLeftBarButtonItems];
@@ -166,7 +168,7 @@
     UIBarButtonItem *barButtonToday = [[UIBarButtonItem alloc] initWithCustomView:buttonToday];
     
     labelWithMonthAndYear = [[UILabel alloc] initWithFrame:CGRectMake(0., 0., 170., 30)];
-    [labelWithMonthAndYear setTextColor:[UIColor redColor]];
+    [labelWithMonthAndYear setTextColor:[UIColor bp_dustyOrangeColor]];
     [labelWithMonthAndYear setFont:buttonToday.titleLabel.font];
     UIBarButtonItem *barButtonLabel = [[UIBarButtonItem alloc] initWithCustomView:labelWithMonthAndYear];
     
