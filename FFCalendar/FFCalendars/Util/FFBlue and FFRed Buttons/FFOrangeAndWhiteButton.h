@@ -1,5 +1,5 @@
 //
-//  FFRedAndWhiteButton.h
+//  FFOrangeAndWhiteButton.h
 //  FFCalendar
 //
 //  Created by Fernanda G. Geraissate on 2/23/14.
@@ -10,6 +10,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FFRedAndWhiteButton : UIButton
+@interface FFOrangeAndWhiteButton : UIButton
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FFRedAndWhiteButton.m
+//  FFOrangeAndWhiteButton.m
 //  FFCalendar
 //
 //  Created by Fernanda G. Geraissate on 2/23/14.
@@ -8,13 +8,13 @@
 //  http://fernandasportfolio.tumblr.com
 //
 
-#import "FFRedAndWhiteButton.h"
+#import "FFOrangeAndWhiteButton.h"
 
 #import "FFImportantFilesForCalendar.h"
 
 #import "UIColor+BPColors.h"
 
-@implementation FFRedAndWhiteButton
+@implementation FFOrangeAndWhiteButton
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -52,7 +52,7 @@
     if(_selected) {
         [self.layer setBorderColor:[UIColor whiteColor].CGColor];
     } else {
-        [self.layer setBorderColor:[UIColor redColor].CGColor];
+        [self.layer setBorderColor:[UIColor bp_dustyOrangeColor].CGColor];
     }
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19316B871BE93F60008CA267 /* UIColor+BPColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 19316B861BE93F60008CA267 /* UIColor+BPColors.m */; };
 		55AFEC3D18AC435D005D2B91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC3C18AC435D005D2B91 /* Foundation.framework */; };
 		55AFEC3F18AC435D005D2B91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC3E18AC435D005D2B91 /* CoreGraphics.framework */; };
 		55AFEC4118AC435D005D2B91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AFEC4018AC435D005D2B91 /* UIKit.framework */; };
@@ -16,6 +15,7 @@
 		55AFEC4B18AC435D005D2B91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AFEC4A18AC435D005D2B91 /* main.m */; };
 		55AFEC5218AC435D005D2B91 /* FFCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55AFEC5018AC435D005D2B91 /* FFCalendar.xcdatamodeld */; };
 		55AFEC5418AC435D005D2B91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AFEC5318AC435D005D2B91 /* Images.xcassets */; };
+		58BAE3FF5B60628E3652A6F1 /* UIColor+BPColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BAED5675A05BDE06EE1C2C /* UIColor+BPColors.m */; };
 		CDA596E619086CFA00CB4F93 /* DailyCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA596E219086CFA00CB4F93 /* DailyCalendar.png */; };
 		CDA596E719086CFA00CB4F93 /* MonthlyCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA596E319086CFA00CB4F93 /* MonthlyCalendar.png */; };
 		CDA596E819086CFA00CB4F93 /* WeeklyCalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA596E419086CFA00CB4F93 /* WeeklyCalendar.png */; };
@@ -54,7 +54,7 @@
 		CDA8F21818DA43EA0080DE6D /* FFYearCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1BD18DA43EA0080DE6D /* FFYearCollectionView.m */; };
 		CDA8F21918DA43EA0080DE6D /* FFYearCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1BF18DA43EA0080DE6D /* FFYearCollectionViewFlowLayout.m */; };
 		CDA8F21A18DA43EA0080DE6D /* FFBlueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1C318DA43EA0080DE6D /* FFBlueButton.m */; };
-		CDA8F21B18DA43EA0080DE6D /* FFRedAndWhiteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1C518DA43EA0080DE6D /* FFRedAndWhiteButton.m */; };
+		CDA8F21B18DA43EA0080DE6D /* FFOrangeAndWhiteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1C518DA43EA0080DE6D /* FFOrangeAndWhiteButton.m */; };
 		CDA8F21C18DA43EA0080DE6D /* NSDate+FFDaysCount.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1C818DA43EA0080DE6D /* NSDate+FFDaysCount.m */; };
 		CDA8F21D18DA43EA0080DE6D /* UIColor+FFMoreColors.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1CA18DA43EA0080DE6D /* UIColor+FFMoreColors.m */; };
 		CDA8F21E18DA43EA0080DE6D /* UIImage+FFCustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1CC18DA43EA0080DE6D /* UIImage+FFCustomMethods.m */; };
@@ -73,13 +73,11 @@
 		CDA8F22B18DA43EA0080DE6D /* FFEventDetailPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1F018DA43EA0080DE6D /* FFEventDetailPopoverController.m */; };
 		CDA8F22C18DA43EA0080DE6D /* FFEventDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F1F218DA43EA0080DE6D /* FFEventDetailView.m */; };
 		CDA8F22D18DA43EA0080DE6D /* blackCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA8F1F518DA43EA0080DE6D /* blackCircle.png */; };
-		CDA8F22E18DA43EA0080DE6D /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA8F1F618DA43EA0080DE6D /* redCircle.png */; };
+		CDA8F22E18DA43EA0080DE6D /* orangeCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = CDA8F1F618DA43EA0080DE6D /* orangeCircle.png */; };
 		CDA8F23618DA45DC0080DE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA8F23518DA45DC0080DE6D /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19316B851BE93F60008CA267 /* UIColor+BPColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BPColors.h"; sourceTree = "<group>"; };
-		19316B861BE93F60008CA267 /* UIColor+BPColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BPColors.m"; sourceTree = "<group>"; };
 		55AFEC3918AC435C005D2B91 /* FFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AFEC3C18AC435D005D2B91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		55AFEC3E18AC435D005D2B91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +93,8 @@
 		55AFEC6318AC435D005D2B91 /* FFCalendarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FFCalendarTests-Info.plist"; sourceTree = "<group>"; };
 		55AFEC6518AC435D005D2B91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55AFEC6718AC435D005D2B91 /* FFCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCalendarTests.m; sourceTree = "<group>"; };
+		58BAEB8B675334D46DA49A5D /* UIColor+BPColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BPColors.h"; sourceTree = "<group>"; };
+		58BAED5675A05BDE06EE1C2C /* UIColor+BPColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BPColors.m"; sourceTree = "<group>"; };
 		CDA596E219086CFA00CB4F93 /* DailyCalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DailyCalendar.png; sourceTree = "<group>"; };
 		CDA596E319086CFA00CB4F93 /* MonthlyCalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MonthlyCalendar.png; sourceTree = "<group>"; };
 		CDA596E419086CFA00CB4F93 /* WeeklyCalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeeklyCalendar.png; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 		CDA8F1BF18DA43EA0080DE6D /* FFYearCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFYearCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		CDA8F1C218DA43EA0080DE6D /* FFBlueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFBlueButton.h; sourceTree = "<group>"; };
 		CDA8F1C318DA43EA0080DE6D /* FFBlueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFBlueButton.m; sourceTree = "<group>"; };
-		CDA8F1C418DA43EA0080DE6D /* FFRedAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRedAndWhiteButton.h; sourceTree = "<group>"; };
-		CDA8F1C518DA43EA0080DE6D /* FFRedAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRedAndWhiteButton.m; sourceTree = "<group>"; };
+		CDA8F1C418DA43EA0080DE6D /* FFOrangeAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFOrangeAndWhiteButton.h; sourceTree = "<group>"; };
+		CDA8F1C518DA43EA0080DE6D /* FFOrangeAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFOrangeAndWhiteButton.m; sourceTree = "<group>"; };
 		CDA8F1C718DA43EA0080DE6D /* NSDate+FFDaysCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FFDaysCount.h"; sourceTree = "<group>"; };
 		CDA8F1C818DA43EA0080DE6D /* NSDate+FFDaysCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FFDaysCount.m"; sourceTree = "<group>"; };
 		CDA8F1C918DA43EA0080DE6D /* UIColor+FFMoreColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FFMoreColors.h"; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		CDA8F1F218DA43EA0080DE6D /* FFEventDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFEventDetailView.m; sourceTree = "<group>"; };
 		CDA8F1F318DA43EA0080DE6D /* FFImportantFilesForCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFImportantFilesForCalendar.h; sourceTree = "<group>"; };
 		CDA8F1F518DA43EA0080DE6D /* blackCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackCircle.png; sourceTree = "<group>"; };
-		CDA8F1F618DA43EA0080DE6D /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
+		CDA8F1F618DA43EA0080DE6D /* orangeCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeCircle.png; sourceTree = "<group>"; };
 		CDA8F23418DA45DC0080DE6D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CDA8F23518DA45DC0080DE6D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -545,8 +545,6 @@
 		CDA8F1C018DA43EA0080DE6D /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				19316B851BE93F60008CA267 /* UIColor+BPColors.h */,
-				19316B861BE93F60008CA267 /* UIColor+BPColors.m */,
 				CDA8F1F318DA43EA0080DE6D /* FFImportantFilesForCalendar.h */,
 				CDA8F1CF18DA43EA0080DE6D /* FFConstants.h */,
 				CDA8F1D318DA43EA0080DE6D /* FFEvent */,
@@ -564,8 +562,8 @@
 			children = (
 				CDA8F1C218DA43EA0080DE6D /* FFBlueButton.h */,
 				CDA8F1C318DA43EA0080DE6D /* FFBlueButton.m */,
-				CDA8F1C418DA43EA0080DE6D /* FFRedAndWhiteButton.h */,
-				CDA8F1C518DA43EA0080DE6D /* FFRedAndWhiteButton.m */,
+				CDA8F1C418DA43EA0080DE6D /* FFOrangeAndWhiteButton.h */,
+				CDA8F1C518DA43EA0080DE6D /* FFOrangeAndWhiteButton.m */,
 			);
 			path = "FFBlue and FFRed Buttons";
 			sourceTree = "<group>";
@@ -581,6 +579,8 @@
 				CDA8F1CC18DA43EA0080DE6D /* UIImage+FFCustomMethods.m */,
 				CDA8F1CD18DA43EA0080DE6D /* UILabel+FFCustomMethods.h */,
 				CDA8F1CE18DA43EA0080DE6D /* UILabel+FFCustomMethods.m */,
+				58BAEB8B675334D46DA49A5D /* UIColor+BPColors.h */,
+				58BAED5675A05BDE06EE1C2C /* UIColor+BPColors.m */,
 			);
 			path = FFCategories;
 			sourceTree = "<group>";
@@ -684,7 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA8F1F518DA43EA0080DE6D /* blackCircle.png */,
-				CDA8F1F618DA43EA0080DE6D /* redCircle.png */,
+				CDA8F1F618DA43EA0080DE6D /* orangeCircle.png */,
 				CDA596E219086CFA00CB4F93 /* DailyCalendar.png */,
 				CDA596E319086CFA00CB4F93 /* MonthlyCalendar.png */,
 				CDA596E419086CFA00CB4F93 /* WeeklyCalendar.png */,
@@ -747,7 +747,7 @@
 				CDA596E819086CFA00CB4F93 /* WeeklyCalendar.png in Resources */,
 				55AFEC4918AC435D005D2B91 /* InfoPlist.strings in Resources */,
 				CDA596E719086CFA00CB4F93 /* MonthlyCalendar.png in Resources */,
-				CDA8F22E18DA43EA0080DE6D /* redCircle.png in Resources */,
+				CDA8F22E18DA43EA0080DE6D /* orangeCircle.png in Resources */,
 				CDA596E919086CFA00CB4F93 /* YearlyCalendar.png in Resources */,
 				CDA596E619086CFA00CB4F93 /* DailyCalendar.png in Resources */,
 				CDA8F22D18DA43EA0080DE6D /* blackCircle.png in Resources */,
@@ -763,13 +763,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA8F21118DA43EA0080DE6D /* FFWeekCollectionViewFlowLayout.m in Sources */,
-				19316B871BE93F60008CA267 /* UIColor+BPColors.m in Sources */,
 				CDA8F20818DA43EA0080DE6D /* FFMonthCollectionViewFlowLayout.m in Sources */,
 				CDA8F22118DA43EA0080DE6D /* FFEvent.m in Sources */,
 				CDA8F16E18DA3B7E0080DE6D /* FFCalendarViewController.m in Sources */,
 				CDA8F22418DA43EA0080DE6D /* FFButtonWithHourPopover.m in Sources */,
 				CDA8F21E18DA43EA0080DE6D /* UIImage+FFCustomMethods.m in Sources */,
-				CDA8F21B18DA43EA0080DE6D /* FFRedAndWhiteButton.m in Sources */,
+				CDA8F21B18DA43EA0080DE6D /* FFOrangeAndWhiteButton.m in Sources */,
 				CDA8F20118DA43EA0080DE6D /* FFDayCollectionView.m in Sources */,
 				CDA8F21C18DA43EA0080DE6D /* NSDate+FFDaysCount.m in Sources */,
 				CDA8F21D18DA43EA0080DE6D /* UIColor+FFMoreColors.m in Sources */,
@@ -818,6 +817,7 @@
 				CDA8F22218DA43EA0080DE6D /* FFButtonWithDatePopover.m in Sources */,
 				CDA8F20B18DA43EA0080DE6D /* FFWeekHeaderCell.m in Sources */,
 				CDA8F16D18DA3B7E0080DE6D /* FFButtonAddEventWithPopover.m in Sources */,
+				58BAE3FF5B60628E3652A6F1 /* UIColor+BPColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

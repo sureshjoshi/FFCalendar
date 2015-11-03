@@ -12,6 +12,7 @@
 
 #import "FFHourAndMinLabel.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFViewWithHourLines ()
 @property (nonatomic, strong) NSMutableArray *arrayLabelsHourAndMin;
@@ -113,14 +114,14 @@
 - (UILabel *)labelWithCurrentHourWithWidth:(CGFloat)_width {
     
     labelRed = [[FFHourAndMinLabel alloc] initWithFrame:CGRectMake(10, yCurrent, _width-10, HEIGHT_CELL_MIN) date:[NSDate date]];
-    [labelRed setTextColor:[UIColor redColor]];
+    [labelRed setTextColor:[UIColor bp_dustyOrangeColor]];
     [labelRed showText];
     
     CGFloat width = [labelRed widthThatWouldFit];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(labelRed.frame.origin.x+width, HEIGHT_CELL_MIN/2., _width-labelRed.frame.origin.x-width, 1.)];
     [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [view setBackgroundColor:[UIColor redColor]];
+    [view setBackgroundColor:[UIColor bp_dustyOrangeColor]];
     [labelRed addSubview:view];
     
     return labelRed;

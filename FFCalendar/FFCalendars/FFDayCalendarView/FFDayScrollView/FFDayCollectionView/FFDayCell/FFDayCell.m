@@ -13,6 +13,7 @@
 #import "FFHourAndMinLabel.h"
 #import "FFBlueButton.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFDayCell ()
 @property (nonatomic, strong) NSMutableArray *arrayLabelsHourAndMin;
@@ -194,12 +195,12 @@
     
     FFHourAndMinLabel *label = [[FFHourAndMinLabel alloc] initWithFrame:CGRectMake(.0, _yCurrent, _width, HEIGHT_CELL_MIN) date:[NSDate date]];
     [label showText];
-    [label setTextColor:[UIColor redColor]];
+    [label setTextColor:[UIColor bp_dustyOrangeColor]];
     CGFloat width = [label widthThatWouldFit];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(label.frame.origin.x+width+10., HEIGHT_CELL_MIN/2., _width-label.frame.origin.x-width-20., 1.)];
     [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    [view setBackgroundColor:[UIColor redColor]];
+    [view setBackgroundColor:[UIColor bp_dustyOrangeColor]];
     [label addSubview:view];
     
     return label;

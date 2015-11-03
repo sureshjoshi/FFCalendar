@@ -139,10 +139,10 @@
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedItem.width = 30.;
     
-    FFRedAndWhiteButton *buttonYear = [self calendarButtonWithTitle:@"year"];
-    FFRedAndWhiteButton *buttonMonth = [self calendarButtonWithTitle:@"month"];
-    FFRedAndWhiteButton *buttonWeek = [self calendarButtonWithTitle:@"week"];
-    FFRedAndWhiteButton *buttonDay = [self calendarButtonWithTitle:@"day"];
+    FFOrangeAndWhiteButton *buttonYear = [self calendarButtonWithTitle:@"year"];
+    FFOrangeAndWhiteButton *buttonMonth = [self calendarButtonWithTitle:@"month"];
+    FFOrangeAndWhiteButton *buttonWeek = [self calendarButtonWithTitle:@"week"];
+    FFOrangeAndWhiteButton *buttonDay = [self calendarButtonWithTitle:@"day"];
     
     UIBarButtonItem *barButtonYear = [[UIBarButtonItem alloc] initWithCustomView:buttonYear];
     UIBarButtonItem *barButtonMonth = [[UIBarButtonItem alloc] initWithCustomView:buttonMonth];
@@ -162,7 +162,7 @@
     UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedItem.width = 30.;
     
-    FFRedAndWhiteButton *buttonToday = [[FFRedAndWhiteButton alloc] initWithFrame:CGRectMake(0., 0., 80., 30)];
+    FFOrangeAndWhiteButton *buttonToday = [[FFOrangeAndWhiteButton alloc] initWithFrame:CGRectMake(0., 0., 80., 30)];
     [buttonToday addTarget:self action:@selector(buttonTodayAction:) forControlEvents:UIControlEventTouchUpInside];
     [buttonToday setTitle:@"today" forState:UIControlStateNormal];
     UIBarButtonItem *barButtonToday = [[UIBarButtonItem alloc] initWithCustomView:buttonToday];
@@ -175,9 +175,9 @@
     [self.navigationItem setLeftBarButtonItems:@[barButtonLabel, fixedItem, barButtonToday]];
 }
 
-- (FFRedAndWhiteButton *)calendarButtonWithTitle:(NSString *)title {
+- (FFOrangeAndWhiteButton *)calendarButtonWithTitle:(NSString *)title {
     
-    FFRedAndWhiteButton *button = [[FFRedAndWhiteButton alloc] initWithFrame:CGRectMake(0., 0., 80., 30.)];
+    FFOrangeAndWhiteButton *button = [[FFOrangeAndWhiteButton alloc] initWithFrame:CGRectMake(0., 0., 80., 30.)];
     [button addTarget:self action:@selector(buttonYearMonthWeekDayAction:) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:title forState:UIControlStateNormal];
     return button;

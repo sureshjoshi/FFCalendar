@@ -11,6 +11,7 @@
 #import "FFButtonAddEventWithPopover.h"
 
 #import "FFAddEventPopoverController.h"
+#import "UIColor+BPColors.h"
 
 @interface FFButtonAddEventWithPopover () <FFAddEventPopoverControllerProtocol>
 @property (nonatomic, strong) FFAddEventPopoverController *popoverControllerAdd;
@@ -31,7 +32,7 @@
     if (self) {
         // Initialization code
         
-        [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor bp_dustyOrangeColor] forState:UIControlStateNormal];
         [self.titleLabel setFont:[UIFont systemFontOfSize:30.]];
         [self setTitle:@"+" forState:UIControlStateNormal];
         

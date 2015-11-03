@@ -11,6 +11,7 @@
 #import "FFEventDetailView.h"
 
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFEventDetailView ()
 @property (nonatomic, strong) FFEvent *event;
@@ -109,7 +110,7 @@
     CGFloat gap = 30;
     
     buttonEditPopover = [[UIButton alloc] initWithFrame:CGRectMake(sizeView.width-width-gap, 22, width, height)];
-    [buttonEditPopover setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [buttonEditPopover setTitleColor:[UIColor bp_dustyOrangeColor] forState:UIControlStateNormal];
     [buttonEditPopover setTitle:@"Edit" forState:UIControlStateNormal];
     [buttonEditPopover.titleLabel setFont:[UIFont boldSystemFontOfSize:buttonEditPopover.titleLabel.font.pointSize]];
     [buttonEditPopover addTarget:self action:@selector(buttonEditPopoverAction:) forControlEvents:UIControlEventTouchUpInside];

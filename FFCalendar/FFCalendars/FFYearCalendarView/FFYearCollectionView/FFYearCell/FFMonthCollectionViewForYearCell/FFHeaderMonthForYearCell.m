@@ -11,6 +11,7 @@
 #import "FFHeaderMonthForYearCell.h"
 
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFHeaderMonthForYearCell ()
 @property (nonatomic, strong) UILabel *labelTitle;
@@ -52,7 +53,7 @@
         CGFloat height = self.frame.size.height/4.;
         
         labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(0., 0., self.frame.size.width, 3*height)];
-        [labelTitle setTextColor:[UIColor redColor]];
+        [labelTitle setTextColor:[UIColor bp_dustyOrangeColor]];
         [self addSubview:labelTitle];
         
         for (int i = 0; i < [arrayWeekAbrev count]; i++) {

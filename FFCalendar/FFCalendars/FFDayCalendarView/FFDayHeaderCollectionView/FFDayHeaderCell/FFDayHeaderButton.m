@@ -12,7 +12,7 @@
 
 #import "FFImportantFilesForCalendar.h"
 
-static UIImage *imageCircleRed;
+static UIImage *imageCircleOrange;
 static UIImage *imageCircleBlack;
 
 @implementation FFDayHeaderButton
@@ -36,7 +36,7 @@ static UIImage *imageCircleBlack;
 
         if (!imageCircleBlack) {
             imageCircleBlack = [UIImage imageNamed:@"blackCircle"];
-            imageCircleRed = [UIImage imageNamed:@"redCircle"];
+            imageCircleOrange = [UIImage imageNamed:@"orangeCircle"];
         }
         
         [self setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
@@ -54,7 +54,7 @@ static UIImage *imageCircleBlack;
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         if ([NSDate isTheSameDateTheCompA:[NSDate componentsOfDate:date] compB:[NSDate componentsOfCurrentDate]]) {
-            [self setBackgroundImage:imageCircleRed forState:UIControlStateNormal];
+            [self setBackgroundImage:imageCircleOrange forState:UIControlStateNormal];
         } else {
             [self setBackgroundImage:imageCircleBlack forState:UIControlStateNormal];
         }

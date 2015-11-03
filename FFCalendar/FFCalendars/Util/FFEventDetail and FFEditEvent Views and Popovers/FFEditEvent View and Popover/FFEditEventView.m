@@ -15,6 +15,7 @@
 #import "FFSearchBarWithAutoComplete.h"
 #import "FFGuestsTableView.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 //#import "SVProgressHUD.h"
 
 @interface FFEditEventView () <UIGestureRecognizerDelegate>
@@ -247,7 +248,7 @@
     
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor bp_dustyOrangeColor] forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:button.titleLabel.font.pointSize]];
     [button setFrame:frame];
     [button setContentMode:UIViewContentModeScaleAspectFit];
