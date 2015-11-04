@@ -36,7 +36,7 @@ static UIImage *imageCircleBlack;
         [self setContentMode:UIViewContentModeCenter];
 
         if (!imageCircleBlack) {
-            imageCircleBlack = [UIImage imageNamed:@"blackCircle"];
+            imageCircleBlack = [UIImage imageNamed:@"blueCircle"];
             imageCircleOrange = [UIImage imageNamed:@"orangeCircle"];
         }
 

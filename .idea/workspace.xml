@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="997a5467-670c-4904-a93d-5ffca7a46a5f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithDatePopover/FFButtonWithDatePopover.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithDatePopover/FFButtonWithDatePopover.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFButtonWithEditAndDetailPopoversForMonthCell/FFButtonWithEditAndDetailPopoversForMonthCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFButtonWithEditAndDetailPopoversForMonthCell/FFButtonWithEditAndDetailPopoversForMonthCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithTimePopover/FFButtonWithHourPopover.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithTimePopover/FFButtonWithHourPopover.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendarViewController/FFCalendarViewController.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendarViewController/FFCalendarViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/Images/blueCircle.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/Images/blackCircle.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FFCalendar.iml" afterPath="$PROJECT_DIR$/.idea/FFCalendar.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFHeaderMonthForYearCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFHeaderMonthForYearCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFMonthCellForYearCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFMonthCellForYearCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthHeaderView/FFMonthHeaderView.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthHeaderView/FFMonthHeaderView.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.h" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.m" afterPath="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FFCalendar.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/FFCalendar.xcodeproj/project.pbxproj" />
     </list>
     <ignored path="FFCalendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +30,8 @@
       <file leaf-file-name="FFDayCell.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
+            <state vertical-scroll-proportion="-4.3333335">
+              <caret line="110" column="40" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="40" />
               <folding>
                 <element signature="e#203#224#0" expanded="true" />
               </folding>
@@ -48,10 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FFMonthCell.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FFDayHeaderButton.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15789473">
+              <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FFMonthCell.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1671388">
+            <state vertical-scroll-proportion="15.259259">
               <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
               <folding />
             </state>
@@ -130,16 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FFMonthHeaderView.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthHeaderView/FFMonthHeaderView.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="109" selection-start-line="23" selection-start-column="109" selection-end-line="23" selection-end-column="109" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -162,7 +153,6 @@
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCollectionView.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayCalendarView.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFBlue and FFRed Buttons/FFBlueButton.m" />
-        <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFCategories/UIColor+BPColors.h" />
@@ -175,6 +165,7 @@
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithTimePopover/FFButtonWithHourPopover.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFButtonWithEditAndDetailPopoversForMonthCell/FFButtonWithEditAndDetailPopoversForMonthCell.m" />
         <option value="$PROJECT_DIR$/FFCalendar/FFCalendarViewController/FFCalendarViewController.m" />
+        <option value="$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m" />
       </list>
     </option>
   </component>
@@ -669,7 +660,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="ffmonthcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m&#10;ffbuttonadd&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendarViewController/FFButtonAddEventWithPopover/FFButtonAddEventWithPopover.m&#10;ffbuttonwithed&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFButtonWithEditAndDetailPopoversForMonthCell/FFButtonWithEditAndDetailPopoversForMonthCell.m&#10;ffbuttonwithhou&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithTimePopover/FFButtonWithHourPopover.m&#10;ffbuttonwithdate&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithDatePopover/FFButtonWithDatePopover.m&#10;monthcellforyear&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFMonthCellForYearCell.m&#10;monthcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFHeaderMonthForYearCell.m&#10;monthhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthHeaderView/FFMonthHeaderView.m&#10;ffweek&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffda&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m&#10;ffdayheader&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m&#10;ffday&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderCell.m&#10;ffdayhe&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCollectionView.m&#10;ffbutton&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFBlue and FFRed Buttons/FFBlueButton.m&#10;ffweekcel&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffdaycal&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayCalendarView.m&#10;ffdayca&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayCalendarView.h&#10;ffweekcell.&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffdaycell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m&#10;ffbluebu&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFBlue and FFRed Buttons/FFBlueButton.m&#10;ffweekcol&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCollectionView.m&#10;ffdayhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m&#10;ffweekcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffhou&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFViewWithHourLines/FFViewWithHourLines.m&#10;ffhour&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFViewWithHourLines/FFHourAndMinLabel.m&#10;ffweekcal&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekCalendarView.m&#10;ffweekhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekHeaderCollectionView/FFWeekHeaderCell.m" />
+    <property name="SearchEverywhereHistoryKey" value="ffdayh&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m&#10;ffday&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m&#10;ffmonthcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m&#10;ffbuttonadd&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendarViewController/FFButtonAddEventWithPopover/FFButtonAddEventWithPopover.m&#10;ffbuttonwithed&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFButtonWithEditAndDetailPopoversForMonthCell/FFButtonWithEditAndDetailPopoversForMonthCell.m&#10;ffbuttonwithhou&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithTimePopover/FFButtonWithHourPopover.m&#10;ffbuttonwithdate&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFEventDetail and FFEditEvent Views and Popovers/FFEditEvent View and Popover/FFButtonWithDatePopover/FFButtonWithDatePopover.m&#10;monthcellforyear&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFMonthCellForYearCell.m&#10;monthcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFYearCalendarView/FFYearCollectionView/FFYearCell/FFMonthCollectionViewForYearCell/FFHeaderMonthForYearCell.m&#10;monthhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthHeaderView/FFMonthHeaderView.m&#10;ffweek&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffda&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m&#10;ffdayheader&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m&#10;ffdayhe&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCollectionView.m&#10;ffbutton&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFBlue and FFRed Buttons/FFBlueButton.m&#10;ffweekcel&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffdaycal&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayCalendarView.m&#10;ffdayca&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayCalendarView.h&#10;ffweekcell.&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffdaycell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m&#10;ffbluebu&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/Util/FFBlue and FFRed Buttons/FFBlueButton.m&#10;ffweekcol&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCollectionView.m&#10;ffdayhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m&#10;ffweekcell&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFWeekCollectionView/FFWeekCell.m&#10;ffhou&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFViewWithHourLines/FFViewWithHourLines.m&#10;ffhour&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekScrollView/FFViewWithHourLines/FFHourAndMinLabel.m&#10;ffweekcal&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekCalendarView.m&#10;ffweekhea&#9;FILE&#9;file:///Users/sureshjoshi/Developer/Libraries/FFCalendar/FFCalendar/FFCalendars/FFWeekCalendarView/FFWeekHeaderCollectionView/FFWeekHeaderCell.m" />
   </component>
   <component name="RunManager" selected="Application.FFCalendar">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="FFCalendar" TARGET_NAME="FFCalendar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FFCalendar" RUN_TARGET_NAME="FFCalendar" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -932,7 +923,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
           <folding>
-            <element signature="e#204#228#0" expanded="true" />
+            <element signature="e#204#228#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -957,14 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="259" column="55" selection-start-line="259" selection-start-column="55" selection-end-line="259" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.851852">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1000,16 +983,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
-          <folding>
-            <element signature="e#203#224#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,8 +1054,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFMonthCalendarView/FFMonthCollectionView/FFMonthCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1671388">
+        <state vertical-scroll-proportion="15.259259">
           <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayScrollView/FFDayCollectionView/FFDayCell/FFDayCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3333335">
+          <caret line="110" column="40" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="40" />
+          <folding>
+            <element signature="e#203#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFCalendar/FFCalendars/FFDayCalendarView/FFDayHeaderCollectionView/FFDayHeaderCell/FFDayHeaderButton.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15789473">
+          <caret line="38" column="63" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
           <folding />
         </state>
       </provider>
