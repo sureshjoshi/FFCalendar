@@ -15,6 +15,7 @@
 #import "FFEventDetailPopoverController.h"
 #import "FFEditEventPopoverController.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFWeekCell () <FFEventDetailPopoverControllerProtocol, FFEditEventPopoverControllerProtocol>
 @property (nonatomic, strong) NSMutableArray *arrayLabelsHourAndMin;
@@ -67,11 +68,26 @@
             [labelHourMin setTextColor:[UIColor grayColor]];
             if (min == 0) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT_CELL_MIN/2., self.frame.size.width, 1.)];
-                [view setBackgroundColor:[UIColor lightGrayCustom]];
+                [view setBackgroundColor:[UIColor bp_greyishColor]];
                 [labelHourMin addSubview:view];
                 [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
                 [labelHourMin setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
             }
+
+            if (min == 30) {
+//                CAShapeLayer* shapeLayer = [CAShapeLayer layer];
+//                shapeLayer.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;
+//                shapeLayer.fillColor = nil;
+//                shapeLayer.lineDashPattern = @[@4, @2];
+
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT_CELL_MIN/2., self.frame.size.width, 1.)]; 
+//                [[view layer] addSublayer:shapeLayer];
+                [view setBackgroundColor:[UIColor bp_greyishColor]];
+                [labelHourMin addSubview:view];
+                [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+                [labelHourMin setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+            }
+
             [self addSubview:labelHourMin];
             [arrayLabelsHourAndMin addObject:labelHourMin];
             
@@ -115,8 +131,16 @@
                     yTimeEnd = label.frame.origin.y+label.frame.size.height;
                 }
             }
-            
-            FFBlueButton *_button = [[FFBlueButton alloc] initWithFrame:CGRectMake(0, yTimeBegin, self.frame.size.width, yTimeEnd-yTimeBegin)];
+
+            // TODO: Make this less hardcoded
+            const float buttonXOffset = 0.f;
+            const float buttonWidth = self.frame.size.width;
+            const float buttonTopMargin = 3.f;
+            const float buttonBottomMargin = 3.f;
+            const float buttonYOffset = yTimeBegin + buttonTopMargin;
+            const float buttonHeight = yTimeEnd - yTimeBegin - buttonTopMargin - buttonBottomMargin;
+
+            FFBlueButton *_button = [[FFBlueButton alloc] initWithFrame:CGRectMake(buttonXOffset, buttonYOffset, buttonWidth, buttonHeight)];
             [_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [_button setTitle:event.stringCustomerName forState:UIControlStateNormal];
             [_button setEvent:event];
@@ -154,24 +178,24 @@
 
 - (IBAction)buttonAction:(id)sender {
     
-    button = (FFBlueButton *)sender;
-    
-    popoverControllerDetails = [[FFEventDetailPopoverController alloc] initWithEvent:button.event];
-    [popoverControllerDetails setProtocol:self];
-    
-    [popoverControllerDetails presentPopoverFromRect:button.frame
-                                              inView:self
-                            permittedArrowDirections:UIPopoverArrowDirectionAny
-                                            animated:YES];
+//    button = (FFBlueButton *)sender;
+//
+//    popoverControllerDetails = [[FFEventDetailPopoverController alloc] initWithEvent:button.event];
+//    [popoverControllerDetails setProtocol:self];
+//
+//    [popoverControllerDetails presentPopoverFromRect:button.frame
+//                                              inView:self
+//                            permittedArrowDirections:UIPopoverArrowDirectionAny
+//                                            animated:YES];
 }
 
 #pragma mark - FFEventDetailPopoverController Protocol
 
 - (void)showPopoverEditWithEvent:(FFEvent *)_event {
-    
+
     popoverControllerEditar = [[FFEditEventPopoverController alloc] initWithEvent:_event];
     [popoverControllerEditar setProtocol:self];
-    
+
     [popoverControllerEditar presentPopoverFromRect:button.frame
                                              inView:self
                            permittedArrowDirections:UIPopoverArrowDirectionAny

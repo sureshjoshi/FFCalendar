@@ -61,7 +61,7 @@
         [self setDataSource:self];
         [self setDelegate:self];
         
-        [self setBackgroundColor:[UIColor lighterGrayCustom]];
+        [self setBackgroundColor:[UIColor whiteColor]];
         
         [self registerClass:[FFDayHeaderCell class] forCellWithReuseIdentifier:REUSE_IDENTIFIER_MONTH_CELL];
         

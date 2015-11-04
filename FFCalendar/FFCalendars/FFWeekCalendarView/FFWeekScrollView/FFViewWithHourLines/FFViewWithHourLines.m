@@ -51,13 +51,13 @@
             for (int min=0; min<=45; min=min+MINUTES_PER_LABEL) {
                 
                 FFHourAndMinLabel *labelHourMin = [[FFHourAndMinLabel alloc] initWithFrame:CGRectMake(10, y, self.frame.size.width-10, HEIGHT_CELL_MIN) date:[NSDate dateWithHour:hour min:min]];
-                [labelHourMin setTextColor:[UIColor grayColor]];
+                [labelHourMin setTextColor:[UIColor bp_fadedBlueColor]];
                 if (min == 0) {
                     [labelHourMin showText];
                     CGFloat width = [labelHourMin widthThatWouldFit];
                     
                     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(labelHourMin.frame.origin.x+width, HEIGHT_CELL_MIN/2., self.frame.size.width-labelHourMin.frame.origin.x-width, 1.)];
-                    [view setBackgroundColor:[UIColor lightGrayCustom]];
+                    [view setBackgroundColor:[UIColor clearColor]];
                     [labelHourMin addSubview:view];
                 }
                 [self addSubview:labelHourMin];

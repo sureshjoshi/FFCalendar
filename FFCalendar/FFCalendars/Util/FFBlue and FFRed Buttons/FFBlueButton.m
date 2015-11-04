@@ -9,6 +9,7 @@
 //
 
 #import "FFBlueButton.h"
+#import "UIColor+BPColors.h"
 
 @implementation FFBlueButton
 
@@ -26,15 +27,17 @@
         
         [self setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
         [self setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-        
+        [self setContentEdgeInsets:UIEdgeInsetsMake(5,5,5,5)];
+
         self.titleLabel.numberOfLines = 0;
-        [self setBackgroundColor:[UIColor colorWithRed:49./255. green:181./255. blue:247./255. alpha:0.5]];
-        [self.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self setBackgroundColor:[UIColor bp_paleGreyColor]];
+        [self.titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
+        [self setTitleColor:[UIColor bp_duskyBlueColor] forState:UIControlStateNormal];
         [self.layer setBorderColor:[UIColor whiteColor].CGColor];
         [self.layer setBorderWidth:1];
-        
-        
+
+        [[self layer] setCornerRadius:10];
+        [self setClipsToBounds:YES];
         [self setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     }
     return self;

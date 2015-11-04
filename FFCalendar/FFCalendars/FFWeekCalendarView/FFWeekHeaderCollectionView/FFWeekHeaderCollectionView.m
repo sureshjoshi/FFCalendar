@@ -13,6 +13,7 @@
 #import "FFWeekHeaderCell.h"
 #import "FFWeekCollectionViewFlowLayout.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFWeekHeaderCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic) CGFloat lastContentOffset;
@@ -55,7 +56,7 @@
         [self setDataSource:self];
         [self setDelegate:self];
         
-        [self setBackgroundColor:[UIColor lighterGrayCustom]];
+        [self setBackgroundColor:[UIColor whiteColor]];
         
         [self registerClass:[FFWeekHeaderCell class] forCellWithReuseIdentifier:REUSE_IDENTIFIER_MONTH_CELL];
         

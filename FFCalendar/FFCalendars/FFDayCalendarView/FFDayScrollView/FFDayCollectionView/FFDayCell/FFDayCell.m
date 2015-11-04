@@ -74,9 +74,21 @@
                 
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake(labelHourMin.frame.origin.x+width+10, HEIGHT_CELL_MIN/2., self.frame.size.width-labelHourMin.frame.origin.x-width-20, 1.)];
                 [view setAutoresizingMask:AR_WIDTH_HEIGHT];
-                [view setBackgroundColor:[UIColor lightGrayCustom]];
+                [view setBackgroundColor:[UIColor bp_greyishColor]];
                 [labelHourMin addSubview:view];
             }
+
+            if (min == 30) {
+                // TODO - Fix this
+                [labelHourMin showText];
+                [labelHourMin setText:@""];
+                CGFloat width = [labelHourMin widthThatWouldFit];
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(labelHourMin.frame.origin.x+width+10, HEIGHT_CELL_MIN/2., self.frame.size.width-labelHourMin.frame.origin.x-width-20, 1.)];
+                [view setAutoresizingMask:AR_WIDTH_HEIGHT];
+                [view setBackgroundColor:[UIColor bp_greyishColor]];
+                [labelHourMin addSubview:view];
+            }
+
             [self addSubview:labelHourMin];
             [arrayLabelsHourAndMin addObject:labelHourMin];
             
@@ -126,8 +138,16 @@
                     yTimeEnd = label.frame.origin.y+label.frame.size.height;
                 }
             }
-            
-            FFBlueButton *_button = [[FFBlueButton alloc] initWithFrame:CGRectMake(70., yTimeBegin, self.frame.size.width-95., yTimeEnd-yTimeBegin)];
+
+            // TODO: Add this margin in a less hardcoded fashion
+            const float buttonXOffset = 70.f;
+            const float buttonWidth = 300.f;
+            const float buttonTopMargin = 3.f;
+            const float buttonBottomMargin = 3.f;
+            const float buttonYOffset = yTimeBegin + buttonTopMargin;
+            const float buttonHeight = yTimeEnd - yTimeBegin - buttonTopMargin - buttonBottomMargin;
+
+            FFBlueButton *_button = [[FFBlueButton alloc] initWithFrame:CGRectMake(buttonXOffset, buttonYOffset, buttonWidth, buttonHeight)];
             [_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [_button setTitle:event.stringCustomerName forState:UIControlStateNormal];
             [_button setEvent:event];
@@ -209,12 +229,13 @@
 #pragma mark - Button Action
 
 - (IBAction)buttonAction:(id)sender {
-    
-    button = (FFBlueButton *)sender;
-    
-    if (protocol != nil && [protocol respondsToSelector:@selector(showViewDetailsWithEvent:cell:)]) {
-        [protocol showViewDetailsWithEvent:button.event cell:self];
-    }
+
+    // TODO: Inject Segue here
+//    button = (FFBlueButton *)sender;
+//
+//    if (protocol != nil && [protocol respondsToSelector:@selector(showViewDetailsWithEvent:cell:)]) {
+//        [protocol showViewDetailsWithEvent:button.event cell:self];
+//    }
 }
 
 //#pragma mark - FFEventDetailPopoverController Protocol

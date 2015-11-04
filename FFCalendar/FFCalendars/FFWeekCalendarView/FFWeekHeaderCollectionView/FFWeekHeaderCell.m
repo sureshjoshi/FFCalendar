@@ -10,6 +10,7 @@
 
 #import "FFWeekHeaderCell.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @implementation FFWeekHeaderCell
 
@@ -40,7 +41,7 @@
     
     [imageView setImage:nil];
     [label setText:@""];
-    [label setTextColor:[UIColor blackColor]];
+    [label setTextColor:[UIColor bp_duskyBlueColor]];
     date = nil;
 }
 

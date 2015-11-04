@@ -58,7 +58,7 @@
     
     if (!scrollViewHeaderWeek) {
         UIView *viewLeft = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80., HEADER_HEIGHT_SCROLL)];
-        [viewLeft setBackgroundColor:[UIColor lighterGrayCustom]];
+        [viewLeft setBackgroundColor:[UIColor whiteColor]];
         [self addSubview:viewLeft];
         
         scrollViewHeaderWeek = [[FFWeekHeaderCollectionView alloc] initWithFrame:CGRectMake(viewLeft.frame.size.width, 0, self.frame.size.width-viewLeft.frame.size.width, HEADER_HEIGHT_SCROLL)];
