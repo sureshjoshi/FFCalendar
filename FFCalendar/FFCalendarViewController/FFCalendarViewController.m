@@ -149,12 +149,12 @@
     UIBarButtonItem *barButtonWeek = [[UIBarButtonItem alloc] initWithCustomView:buttonWeek];
     UIBarButtonItem *barButtonDay = [[UIBarButtonItem alloc] initWithCustomView:buttonDay];
     
-    FFButtonAddEventWithPopover *buttonAdd = [[FFButtonAddEventWithPopover alloc] initWithFrame:CGRectMake(0., 0., 30., 44)];
-    [buttonAdd setProtocol:self];
-    UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
+//    FFButtonAddEventWithPopover *buttonAdd = [[FFButtonAddEventWithPopover alloc] initWithFrame:CGRectMake(0., 0., 30., 44)];
+//    [buttonAdd setProtocol:self];
+//    UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
     
     arrayButtons = @[buttonYear, buttonMonth, buttonWeek, buttonDay];
-    [self.navigationItem setRightBarButtonItems:@[barButtonAdd, fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
+    [self.navigationItem setRightBarButtonItems:@[/*barButtonAdd, */fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
 }
 
 - (void)addLeftBarButtonItems {

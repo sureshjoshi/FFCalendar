@@ -12,6 +12,7 @@
 
 #import "FFHourPopoverController.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFButtonWithHourPopover () <FFHourPopoverControllerProtocol>
 @property (nonatomic, strong) FFHourPopoverController *popoverControllerDate;
@@ -32,7 +33,7 @@
     if (self) {
         // Initialization code
         
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor bp_duskyBlueColor] forState:UIControlStateNormal];
         
         [self setBackgroundColor:[UIColor whiteColor]];
         

@@ -15,6 +15,7 @@
 + (UIColor *)bp_charcoalGreyColor;
 + (UIColor *)bp_pinkishGreyColor;
 + (UIColor *)bp_greyishColor;
++ (UIColor *)bp_halfGreyishColor;
 + (UIColor *)bp_paleGreyColor;
 
 @end

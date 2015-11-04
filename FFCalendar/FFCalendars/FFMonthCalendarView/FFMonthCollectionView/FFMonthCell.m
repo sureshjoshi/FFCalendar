@@ -12,6 +12,7 @@
 
 #import "FFButtonWithEditAndDetailPopoversForMonthCell.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFMonthCell () <FFButtonWithEditAndDetailPopoversForMonthCellProtocol>
 @property (nonatomic, strong) NSMutableArray *arrayButtons;
@@ -62,7 +63,7 @@
     
     [self setBackgroundColor:[UIColor whiteColor]];
     [self.labelDay setText:@""];
-    [self.labelDay setTextColor:[UIColor blackColor]];
+    [self.labelDay setTextColor:[UIColor bp_duskyBlueColor]];
     [self.imageViewCircle setImage:nil];
     
     for (UIButton *button in arrayButtons) {

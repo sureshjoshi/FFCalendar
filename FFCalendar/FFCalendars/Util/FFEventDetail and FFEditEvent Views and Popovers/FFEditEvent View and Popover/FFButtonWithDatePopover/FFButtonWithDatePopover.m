@@ -12,6 +12,7 @@
 
 #import "FFDatePopoverController.h"
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @interface FFButtonWithDatePopover () <FFDatePopoverControllerProtocol>
 @property (nonatomic, strong) FFDatePopoverController *popoverControllerDate;
@@ -32,7 +33,7 @@
     if (self) {
         // Initialization code
         
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor bp_duskyBlueColor] forState:UIControlStateNormal];
         
         [self setBackgroundColor:[UIColor whiteColor]];
         

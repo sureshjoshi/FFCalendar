@@ -60,7 +60,7 @@
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*sizeOfCells.width, labelTitle.frame.size.height, sizeOfCells.width, height)];
             [label setTextAlignment:NSTextAlignmentCenter];
             [label setText:[arrayWeekAbrev objectAtIndex:i]];
-            [label setTextColor:[UIColor blackColor]];
+            [label setTextColor:[UIColor bp_duskyBlueColor]];
             [label setFont:[UIFont boldSystemFontOfSize:label.font.pointSize-5]];
             [self addSubview:label];
         }

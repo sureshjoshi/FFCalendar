@@ -9,6 +9,7 @@
 //
 
 #import "FFMonthCellForYearCell.h"
+#import "UIColor+BPColors.h"
 
 @interface FFMonthCellForYearCell ()
 @property (strong, nonatomic) UIImageView *imageViewCircle;
@@ -55,7 +56,7 @@
     }
     
     [labelDay setText:@""];
-    [labelDay setTextColor:[UIColor blackColor]];
+    [labelDay setTextColor:[UIColor bp_duskyBlueColor]];
     [imageViewCircle setImage:nil];
 }
 

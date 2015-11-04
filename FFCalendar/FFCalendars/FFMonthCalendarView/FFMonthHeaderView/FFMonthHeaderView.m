@@ -11,6 +11,7 @@
 #import "FFMonthHeaderView.h"
 
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 @implementation FFMonthHeaderView
 
@@ -20,7 +21,7 @@
     if (self) {
         // Initialization code
         
-        NSArray *arrayColor = @[[UIColor grayColor], [UIColor blackColor], [UIColor blackColor], [UIColor blackColor], [UIColor blackColor], [UIColor blackColor], [UIColor grayColor]];
+        NSArray *arrayColor = @[[UIColor grayColor], [UIColor bp_duskyBlueColor], [UIColor bp_duskyBlueColor], [UIColor bp_duskyBlueColor], [UIColor bp_duskyBlueColor], [UIColor bp_duskyBlueColor], [UIColor grayColor]];
         CGFloat width = (self.frame.size.width-6*SPACE_COLLECTIONVIEW_CELL)/7.;
         
         for (int i = 0; i < [arrayWeekAbrev count]; i++) {

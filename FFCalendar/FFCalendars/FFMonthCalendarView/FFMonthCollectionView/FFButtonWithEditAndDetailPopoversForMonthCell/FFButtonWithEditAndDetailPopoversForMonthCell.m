@@ -12,6 +12,7 @@
 
 #import "FFEventDetailPopoverController.h"
 #import "FFEditEventPopoverController.h"
+#import "UIColor+BPColors.h"
 
 @interface FFButtonWithEditAndDetailPopoversForMonthCell () <FFEventDetailPopoverControllerProtocol, FFEditEventPopoverControllerProtocol>
 @property (nonatomic, strong) FFEventDetailPopoverController *popoverControllerDetails;
@@ -57,7 +58,7 @@
     
     event = _event;
     
-    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor bp_duskyBlueColor] forState:UIControlStateNormal];
 }
 
 #pragma mark - Button Action

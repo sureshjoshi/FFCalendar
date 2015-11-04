@@ -75,14 +75,8 @@
             }
 
             if (min == 30) {
-//                CAShapeLayer* shapeLayer = [CAShapeLayer layer];
-//                shapeLayer.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;
-//                shapeLayer.fillColor = nil;
-//                shapeLayer.lineDashPattern = @[@4, @2];
-
-                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT_CELL_MIN/2., self.frame.size.width, 1.)]; 
-//                [[view layer] addSublayer:shapeLayer];
-                [view setBackgroundColor:[UIColor bp_greyishColor]];
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT_CELL_MIN/2., self.frame.size.width, 1.)];
+                [view setBackgroundColor:[UIColor bp_halfGreyishColor]];
                 [labelHourMin addSubview:view];
                 [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
                 [labelHourMin setAutoresizingMask:UIViewAutoresizingFlexibleWidth];

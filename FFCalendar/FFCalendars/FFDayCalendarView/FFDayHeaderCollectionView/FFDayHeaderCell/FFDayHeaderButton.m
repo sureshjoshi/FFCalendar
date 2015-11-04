@@ -11,6 +11,7 @@
 #import "FFDayHeaderButton.h"
 
 #import "FFImportantFilesForCalendar.h"
+#import "UIColor+BPColors.h"
 
 static UIImage *imageCircleOrange;
 static UIImage *imageCircleBlack;
@@ -28,17 +29,17 @@ static UIImage *imageCircleBlack;
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
+
         [[UIImageView appearanceWhenContainedIn:[FFDayHeaderButton class], nil] setContentMode:UIViewContentModeScaleAspectFit];
-        
+
         [self setBackgroundColor:[UIColor whiteColor]];
-        [self setContentMode:UIViewContentModeScaleAspectFit];
+        [self setContentMode:UIViewContentModeCenter];
 
         if (!imageCircleBlack) {
             imageCircleBlack = [UIImage imageNamed:@"blackCircle"];
             imageCircleOrange = [UIImage imageNamed:@"orangeCircle"];
         }
-        
+
         [self setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     }
     return self;
@@ -48,24 +49,24 @@ static UIImage *imageCircleBlack;
 #pragma mark - Set Public Property
 
 -(void)setSelected:(BOOL)selected {
-    
+
     if (selected) {
-        
+
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
+
         if ([NSDate isTheSameDateTheCompA:[NSDate componentsOfDate:date] compB:[NSDate componentsOfCurrentDate]]) {
             [self setBackgroundImage:imageCircleOrange forState:UIControlStateNormal];
         } else {
             [self setBackgroundImage:imageCircleBlack forState:UIControlStateNormal];
         }
-        
+
     } else {
         if (date.componentsOfDate.weekday == 1 || date.componentsOfDate.weekday == 7) {
             [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         } else {
-            [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self setTitleColor:[UIColor bp_duskyBlueColor] forState:UIControlStateNormal];
         }
-        
+
         [self setBackgroundImage:nil forState:UIControlStateNormal];
     }
 }

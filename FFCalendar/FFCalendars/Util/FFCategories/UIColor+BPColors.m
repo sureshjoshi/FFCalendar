@@ -33,6 +33,10 @@
     return [UIColor colorWithWhite:168.0f / 255.0f alpha:1.0f];
 }
 
++ (UIColor *)bp_halfGreyishColor {
+    return [UIColor colorWithWhite:168.0f / 255.0f alpha:0.5f];
+}
+
 + (UIColor *)bp_paleGreyColor {
     return [UIColor colorWithRed:240.0f / 255.0f green:243.0f / 255.0f blue:248.0f / 255.0f alpha:1.0f];
 }
